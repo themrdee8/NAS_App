@@ -1,25 +1,35 @@
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { StyleSheet, Image, Platform, View, Text } from 'react-native';
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { StyleSheet, Image, Platform, View, Text } from "react-native";
 
-import { Collapsible } from '@/components/Collapsible';
-import { ExternalLink } from '@/components/ExternalLink';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import FormField from '@/components/FormField';
-import Button from '@/components/Button';
+import { Collapsible } from "@/components/Collapsible";
+import { ExternalLink } from "@/components/ExternalLink";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
+import { SafeAreaView } from "react-native-safe-area-context";
+import FormField from "@/components/FormField";
+import Button from "@/components/Button";
+import { router } from "expo-router";
 
 export default function TabTwoScreen() {
+  const login = () => {
+    router.push("/preCare");
+  };
+
   return (
-    <SafeAreaView style={styles.Container} >
+    <SafeAreaView style={styles.Container}>
       <View style={styles.v1}>
         <Text style={styles.titleContainer}>National Ambulance Service</Text>
         <FormField title="Username" placeholder="Username" />
         <FormField title="Password" placeholder="Password" />
       </View>
       <View>
-        <Button title="Login" containerStyles={styles.button} textStyles={styles.textStyle} />
+        <Button
+          handlePress={login}
+          title="Login"
+          containerStyles={styles.button}
+          textStyles={styles.textStyle}
+        />
       </View>
     </SafeAreaView>
   );
@@ -27,10 +37,10 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: "#808080",
     bottom: -90,
     left: -35,
-    position: 'absolute',
+    position: "absolute",
   },
   titleContainer: {
     fontSize: 32,
@@ -54,5 +64,5 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     padding: 5,
-  }
+  },
 });

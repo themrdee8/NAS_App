@@ -14,6 +14,7 @@ const FormField = ({
   placeholder,
   handleChangeText,
   otherStyles,
+  textAreaStyle,
   ...props
 }: any) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -21,7 +22,7 @@ const FormField = ({
   return (
     <View style={styles.v1}>
       <Text style={styles.title}>{title}</Text>
-      <View style={styles.v2}>
+      <View style={[styles.v2, otherStyles, textAreaStyle]}>
         <TextInput
           style={styles.txtin}
           value={value}

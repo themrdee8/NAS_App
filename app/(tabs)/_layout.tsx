@@ -9,44 +9,62 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
-        headerShown: false,
-      }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: "NAS APP",
-          headerShown: true,
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: "#0A1713" },
-          tabBarStyle: { display: "none" },
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "home" : "home-outline"}
-              color={color}
-            />
-          ),
+    <>
+      <Tabs
+        screenOptions={{
+          tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
+          headerShown: false,
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: "NAS APP",
-          headerShown: true,
-          headerTintColor: "white",
-          headerStyle: { backgroundColor: "#0A1713" },
-          tabBarStyle: { display: "none" },
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
-              color={color}
-            />
-          ),
-        }}
-      />
-    </Tabs>
+      >
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: "NAS APP",
+            headerShown: true,
+            headerTintColor: "white",
+            headerStyle: { backgroundColor: "#0A1713" },
+            tabBarStyle: { display: "none" },
+            tabBarIcon: ({ color, focused }) => (
+              <TabBarIcon
+                name={focused ? "home" : "home-outline"}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="explore"
+          options={{
+            title: "NAS APP",
+            headerShown: true,
+            headerTintColor: "white",
+            headerStyle: { backgroundColor: "#0A1713" },
+            tabBarStyle: { display: "none" },
+            tabBarIcon: ({ color, focused }) => (
+              <TabBarIcon
+                name={focused ? "code-slash" : "code-slash-outline"}
+                color={color}
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="preCare"
+          options={{
+            title: "NAS APP",
+            headerShown: true,
+            headerTintColor: "white",
+            headerStyle: { backgroundColor: "#0A1713" },
+            tabBarStyle: { display: "none" },
+            tabBarIcon: ({ color, focused }) => (
+              <TabBarIcon
+                name={focused ? "code-slash" : "code-slash-outline"}
+                color={color}
+              />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
 }
