@@ -34,8 +34,10 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: "Explore",
-          headerShown: false,
+          title: "NAS APP",
+          headerShown: true,
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "#0A1713" },
           tabBarStyle: { display: "none" },
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
