@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
+import Tickbox from "./Tickbox";
 
 const PatientInfo = () => {
   return (
@@ -8,30 +9,38 @@ const PatientInfo = () => {
       <View style={styles.v2}>
         <FormField title="Patient Name" otherStyles={styles.others} />
         <FormField title="Age" otherStyles={styles.others} />
-        <Text style={styles.t2}>Gender</Text>
-        <Text style={styles.t2}>- [ ] Male - [ ] Female</Text>
+      </View>
+
+      <Text style={styles.t2}>Gender</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Male" />
+        <Tickbox title="Female" />
+      </View>
+
+      <View style={styles.v2}>
         <FormField title="Address" otherStyles={styles.others} />
         <FormField title="Telephone" otherStyles={styles.others} />
         <FormField title="ID No./Passport No." otherStyles={styles.others} />
-        <Text style={styles.t2}>Contact Person</Text>
-        <FormField title="Name" otherStyles={styles.others} />
-        <FormField title="Telephone" otherStyles={styles.others} />
-
-        <View style={styles.v2}>
-          <Text style={styles.t2}>Relationship</Text>
-          <Text style={styles.t2}>
-            - [ ] Father / Mother - [ ] Spouse - [ ] Other
-          </Text>
-        </View>
-
-        <View style={styles.v2}>
-          <Text style={styles.t2}>Patient Refused Treatment</Text>
-          <Text style={styles.t2}>- [ ] Yes - [ ] No</Text>
-        </View>
       </View>
 
-      
-      
+      <Text style={styles.t2}>Contact Person</Text>
+      <View style={styles.v2}>
+        <FormField title="Name" otherStyles={styles.others} />
+        <FormField title="Telephone" otherStyles={styles.others} />
+      </View>
+
+      <Text style={styles.t2}>Relationship</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Father/Mother" />
+        <Tickbox title="Spouse" />
+        <Tickbox title="Other" />
+      </View>
+
+      <Text style={styles.t2}>Patient Refused Treatment</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Yes" />
+        <Tickbox title="No" />
+      </View>
     </View>
   );
 };
@@ -61,6 +70,15 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#68C44C",
     marginLeft: 18,
+    marginTop: 15,
+  },
+  vCheck: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: 8,
+    paddingHorizontal: 10,
+    flexWrap: "wrap",
   },
   tTitle: {
     fontSize: 22,

@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
+import Tickbox from "./Tickbox";
 
 const ClinicInfo = () => {
   return (
@@ -15,35 +16,46 @@ const ClinicInfo = () => {
           otherStyles={styles.others}
           textAreaStyle={styles.textArea}
         />
+      </View>
+
+          <Text style={styles.t2}>Body Part Involved(selet one)</Text>
+        <View style={styles.vCheck}>
+          <Tickbox title="Head/Neck" />
+          <Tickbox title="Thorax" />
+          <Tickbox title="Lower Abdomen" />
+          <Tickbox title="Lower Extremities" />
+          <Tickbox title="Upper Abdomen" />
+          <Tickbox title="Upper Extremities" />
+          <Tickbox title="Reproductive/Tract" />
+          <Tickbox title="Other" />
+    
+        </View>
 
         <View style={styles.v2}>
-          <Text style={styles.t2}>Body Part Involved(selet one)</Text>
-          <Text style={styles.t2}>
-            - [ ] Head / Neck - [ ] Thorax - [ ] Lower Abdomen - [ ] Lower
-            Extremities - [ ] Upper Abdomen - [ ] Upper Extremities - [ ]
-            Reproductive / Tract - [ ] Other
-          </Text>
-        </View>
 
         <FormField title="Recent Medical History" otherStyles={styles.others} />
         <FormField title="Recent Medications" otherStyles={styles.others} />
+        </View>
 
-        <View style={styles.v2}>
           <Text style={styles.t2}>Source of Information(select one)</Text>
-          <Text style={styles.t2}>
-            -- [ ] Patient - [ ] Relative / Friend - [ ] Nurse - [ ] Doctor - [
-            ] Bystander - [ ] Other
-          </Text>
+        <View style={styles.vCheck}>
+          <Tickbox title="Patient" />
+          <Tickbox title="Relative/Friend" />
+          <Tickbox title="Nurse" />
+          <Tickbox title="Doctor" />
+          <Tickbox title="Bystander" />
+          <Tickbox title="Other" />
+          
         </View>
 
-        <View style={styles.v2}>
           <Text style={styles.t2}>Type of Trauma</Text>
-          <Text style={styles.t2}>
-            - [ ] RTC (Road Traffic Collision) - [ ] Industrial Accident - [ ]
-            Other - [ ] Trauma - [ ] Mental Disorder
-          </Text>
+        <View style={styles.vCheck}>
+          <Tickbox title="RTC(Road Traffic Collision)" />
+          <Tickbox title="Industrial Accident" />
+          <Tickbox title="Other" />
+          <Tickbox title="Trauma" />
+          <Tickbox title="Mental Disorder" />
         </View>
-      </View>
     </View>
   );
 };
@@ -73,6 +85,15 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#68C44C",
     marginLeft: 18,
+    marginTop: 15,
+  },
+  vCheck: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: 8,
+    paddingHorizontal: 10,
+    flexWrap: "wrap",
   },
   tTitle: {
     fontSize: 22,

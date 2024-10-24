@@ -35,7 +35,7 @@ const preCare = () => {
 
       <View style={styles.bView}>
         <Button
-          title="Submit Form"
+          title="Next"
           containerStyles={styles.button}
           textStyles={styles.textStyle}
         />

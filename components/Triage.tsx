@@ -1,27 +1,36 @@
 import { Text } from "react-native";
 import { StyleSheet, View } from "react-native";
 import FormField from "./FormField";
+import Tickbox from "./Tickbox";
 
 const Triage = () => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Triage</Text>
-      <View style={styles.v2}>
-        <Text style={styles.t2}>
-          - [ ] Red - [ ] Yellow - [ ] Green - [ ] Black
-        </Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Red" />
+        <Tickbox title="Yellow" />
+        <Tickbox title="Green" />
+        <Tickbox title="Black" />
+      </View>
 
-        <Text style={styles.t2}>Primary Assessment (tick as appropriate)</Text>
-        <View style={styles.v2}>
-          <Text style={styles.t2}>Breathing</Text>
-          <Text style={styles.t2}>- [ ] Adequate - [ ] Inadequate</Text>
+      <Text style={styles.t2}>Primary Assessment (tick as appropriate)</Text>
+      <Text style={styles.t2}>Breathing</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Adequate" />
+        <Tickbox title="Inadequate" />
+      </View>
 
-          <Text style={styles.t2}>Circulation</Text>
-          <Text style={styles.t2}>- [ ] Pulse Present - [ ] Pulse Absent</Text>
+      <Text style={styles.t2}>Circulation</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Pulse Present" />
+        <Tickbox title="Pulse Absent" />
+      </View>
 
-          <Text style={styles.t2}> Consciousness</Text>
-          <Text style={styles.t2}>- [ ] Conscious - [ ] Unconscious</Text>
-        </View>
+      <Text style={styles.t2}> Consciousness</Text>
+      <View style={styles.vCheck}>
+        <Tickbox title="Conscious" />
+        <Tickbox title="Unconscious" />
       </View>
     </View>
   );
@@ -52,6 +61,15 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "#68C44C",
     marginLeft: 18,
+    marginTop: 15,
+  },
+  vCheck: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    marginBottom: 8,
+    paddingHorizontal: 10,
+    flexWrap: "wrap",
   },
   tTitle: {
     fontSize: 22,
