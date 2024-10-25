@@ -6,10 +6,15 @@ import PatientInfo from "@/components/PatientInfo";
 import PersonnelForm from "@/components/PersonnelForm";
 import PhysicalAndHandoff from "@/components/PhysicalAndHandoff";
 import Triage from "@/components/Triage";
+import { router } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const preCare = () => {
+  const billing = () => {
+    router.push("/preBilling");
+  };
+
   return (
     <ScrollView style={styles.Container}>
       <View>
@@ -38,9 +43,9 @@ const preCare = () => {
           title="Next"
           containerStyles={styles.button}
           textStyles={styles.textStyle}
+          handlePress={billing}
         />
       </View>
-      
     </ScrollView>
   );
 };
@@ -91,5 +96,5 @@ const styles = StyleSheet.create({
   },
   bView: {
     paddingBottom: 80,
-  }
+  },
 });

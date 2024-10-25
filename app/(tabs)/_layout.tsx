@@ -64,6 +64,22 @@ export default function TabLayout() {
             ),
           }}
         />
+        <Tabs.Screen
+          name="preBilling"
+          options={{
+            title: "NAS APP",
+            headerShown: true,
+            headerTintColor: "white",
+            headerStyle: { backgroundColor: "#0A1713" },
+            tabBarStyle: { display: "none" },
+            tabBarIcon: ({ color, focused }) => (
+              <TabBarIcon
+                name={focused ? "code-slash" : "code-slash-outline"}
+                color={color}
+              />
+            ),
+          }}
+        />
       </Tabs>
     </>
   );
