@@ -12,8 +12,30 @@ import Button from "@/components/Button";
 import { router } from "expo-router";
 
 export default function TabTwoScreen() {
-  const login = () => {
-    router.push("/preCare");
+  const login = async () => {
+    try {
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: "username",
+          password: "password",
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Login failed. Please check your credentials");
+      }
+
+      const data = await response.json();
+      console.log(data.message);
+      router.push("/preCare");
+    } catch (error: any) {
+      console.error(error);
+      alert(error.message);
+    }
   };
 
   return (

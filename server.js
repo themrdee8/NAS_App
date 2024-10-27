@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const users = [{ username: username, password: password }];
+const users = [{ username: "username", password: "password" }];
 
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
@@ -33,5 +33,5 @@ app.post("/api/login", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
