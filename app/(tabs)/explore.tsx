@@ -10,32 +10,34 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "@/components/FormField";
 import Button from "@/components/Button";
 import { router } from "expo-router";
+import PasswordInput from "@/components/PasswordInput";
 
 export default function TabTwoScreen() {
   const login = async () => {
-    try {
-      const response = await fetch('http://localhost:5000/api/login', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: "username",
-          password: "password",
-        }),
-      });
+    // try {
+    //   const response = await fetch('http://localhost:5000/api/login', {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({
+    //       username: "username",
+    //       password: "password",
+    //     }),
+    //   });
 
-      if (!response.ok) {
-        throw new Error("Login failed. Please check your credentials");
-      }
+    //   if (!response.ok) {
+    //     throw new Error("Login failed. Please check your credentials");
+    //   }
 
-      const data = await response.json();
-      console.log(data.message);
-      router.push("/preCare");
-    } catch (error: any) {
-      console.error(error);
-      alert(error.message);
-    }
+    //   const data = await response.json();
+    //   console.log(data.message);
+    //   router.push("/preCare");
+    // } catch (error: any) {
+    //   console.error(error);
+    //   alert(error.message);
+    // }
+    router.push("/preCare");
   };
 
   return (
@@ -43,7 +45,7 @@ export default function TabTwoScreen() {
       <View style={styles.v1}>
         <Text style={styles.titleContainer}>National Ambulance Service</Text>
         <FormField title="Username" placeholder="Username" />
-        <FormField title="Password" placeholder="Password" />
+        <PasswordInput title="Password" placeholder="Password" />
       </View>
       <View>
         <Button
