@@ -10,22 +10,28 @@ import { router } from "expo-router";
 
 export default function HomeScreen() {
   const login = () => {
-    router.push("/explore")
-  }
+    router.push("/explore");
+  };
 
   return (
     <SafeAreaView style={styles.Container}>
       <View style={styles.v1}>
-        <Text style={styles.titleContainer} className=" items-center">
-          National Ambulance Service
-        </Text>
+        <Image
+          source={require("@/assets/images/nas-logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.titleContainer}>National</Text>
+          <Text style={styles.titleContainer}>Ambulance</Text>
+          <Text style={styles.titleContainer}>Service</Text>
+        </View>
       </View>
       <View style={styles.v2}>
         <Text style={styles.t1}>Welcome to NAS APP</Text>
         <Text style={styles.t2}>
           Your digital companion for emergency services
         </Text>
-        {/* <Button title="Signup" containerStyles={styles.signup} /> */}
         <Button
           title="Login"
           containerStyles={styles.login}
@@ -40,16 +46,25 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    fontSize: 32,
-    color: "white",
+    fontSize: 30.5,
+    color: "#68C44C",
+    fontWeight: "bold",
+  },
+  textContainer: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: 100,
   },
   Container: {
     backgroundColor: "#10251E",
     height: "100%",
   },
   v1: {
+    flexDirection: "row",
     alignItems: "center",
-    paddingTop: 200,
+    justifyContent: "center",
+    paddingHorizontal: 10,
+    marginTop: 100,
   },
   v2: {
     paddingTop: 50,
@@ -69,5 +84,10 @@ const styles = StyleSheet.create({
   },
   login: {
     marginTop: 50,
+  },
+  logo: {
+    width: 135,
+    height: 150,
+    marginRight: 10,
   },
 });

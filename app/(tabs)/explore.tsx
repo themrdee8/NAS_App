@@ -42,8 +42,19 @@ export default function TabTwoScreen() {
 
   return (
     <SafeAreaView style={styles.Container}>
+      <View style={styles.vlogo}>
+      <Image
+          source={require("@/assets/images/nas-logo.png")}
+          style={styles.logo}
+          resizeMode="contain"
+        />
+        <View style={styles.textContainer}>
+          <Text style={styles.titleContainer}>National</Text>
+          <Text style={styles.titleContainer}>Ambulance</Text>
+          <Text style={styles.titleContainer}>Service</Text>
+        </View>
+      </View>
       <View style={styles.v1}>
-        <Text style={styles.titleContainer}>National Ambulance Service</Text>
         <FormField title="Username" placeholder="Username" />
         <PasswordInput title="Password" placeholder="Password" />
       </View>
@@ -66,18 +77,13 @@ const styles = StyleSheet.create({
     left: -35,
     position: "absolute",
   },
-  titleContainer: {
-    fontSize: 32,
-    color: "white",
-    paddingBottom: 35,
-  },
   Container: {
     backgroundColor: "#10251E",
     height: "100%",
   },
   v1: {
     alignItems: "center",
-    paddingTop: 200,
+    paddingTop: 20,
   },
   button: {
     padding: 0,
@@ -88,5 +94,27 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     padding: 5,
+  },
+  logo: {
+    width: 135,
+    height: 150,
+    marginRight: 10,
+  },
+  vlogo: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 10,
+    marginTop: 100,
+  },
+  titleContainer: {
+    fontSize: 30.5,
+    color: "#68C44C",
+    fontWeight: "bold",
+  },
+  textContainer: {
+    flexDirection: "column",
+    justifyContent: "space-between",
+    height: 100,
   },
 });
