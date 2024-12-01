@@ -8,10 +8,10 @@ decision-making and improved patient outcomes.
 
 ## Key Features
 
--_Efficient Data Capture_: Simplifies the process of documenting prehospital care with an easy-to-use interface.
--_Cross-Platform Functionality_: Developed using React Native, ensuring compatibility across iOS and Android devices.
--_Enhanced Medical Collaboration_: Allows seamless sharing of real-time patient data between EMTs and Emergency Room staff.
--_Standardized Forms_: Digital versions of prehospital care forms and prebilling forms ensure consistency in data collection.
+- _Efficient Data Capture_: Simplifies the process of documenting prehospital care with an easy-to-use interface.
+- _Cross-Platform Functionality_: Developed using React Native, ensuring compatibility across iOS and Android devices.
+- _Enhanced Medical Collaboration_: Allows seamless sharing of real-time patient data between EMTs and Emergency Room staff.
+- _Standardized Forms_: Digital versions of prehospital care forms and prebilling forms ensure consistency in data collection.
 
 ## Technoligies
 
