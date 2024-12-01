@@ -1,50 +1,26 @@
-# Welcome to your Expo app 👋
+# NATIONAL AMBULANCE SERVICE APP (NAS APP)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+The NAS App is an innovative mobile application designed to revolutionize prehospital
+care documentation for Ambulance Emergency Medical Technicians (EMTs) and Emergency Room Doctors.
+By replacing traditional paper-based forms with a streamlined digital solution,
+the app enhances the systematic capture of patient data and symptoms, enabling better
+decision-making and improved patient outcomes.
 
-## Get started
+## Key Features
 
-1. Install dependencies
+-_Efficient Data Capture_: Simplifies the process of documenting prehospital care with an easy-to-use interface.
+-_Cross-Platform Functionality_: Developed using React Native, ensuring compatibility across iOS and Android devices.
+-_Enhanced Medical Collaboration_: Allows seamless sharing of real-time patient data between EMTs and Emergency Room staff.
+-_Standardized Forms_: Digital versions of prehospital care forms and prebilling forms ensure consistency in data collection.
 
-   ```bash
-   npm install
-   ```
+## Technoligies
 
-2. Start the app
+- _React Native_: Powers the app's cross-platform capabilities for both iOS and Android.
+- _MongoDB_: Provides a secure and scalable database for patient data storage.
+- _JavaScript & TypeScript_: Ensures robust and maintainable code for optimal performance.
 
-   ```bash
-    npx expo start
-   ```
+## Value Proposition
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+The NAS App bridges the gap between emergency medical services and hospitals by offering a real-time,
+efficient, and accurate way to document and transfer patient information. It not only reduces paperwork
+but also enhances the quality of care delivered to patients in critical conditions.
