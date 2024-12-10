@@ -55,7 +55,7 @@ export default function TabTwoScreen() {
         </View>
       </View>
       <View style={styles.v1}>
-        <FormField title="Username" placeholder="Username" />
+        <FormField title="Username" placeholder="example@email.com" />
         <PasswordInput title="Password" placeholder="Password" />
       </View>
       <View>

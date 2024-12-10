@@ -27,7 +27,7 @@ const FormField = ({
           style={styles.txtin}
           value={value}
           placeholder={placeholder}
-          placeholderTextColor="#9B9A9A"
+          placeholderTextColor="#F1F1F1"
           secureTextEntry={title === "Password" && !showPassword}
         >
           {title === "Password" && (
@@ -80,5 +80,10 @@ const styles = StyleSheet.create({
   },
   txtin: {
     flex: 1,
+    fontSize: 18,
+    fontWeight: "semibold",
+    color: "white",
+    paddingVertical: 0,
+    paddingHorizontal: 0,
   }
 });

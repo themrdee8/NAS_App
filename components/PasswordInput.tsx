@@ -26,6 +26,7 @@ const PasswordInput = ({
       <View style={styles.inputWrapper}>
         <TextInput
           placeholder={placeholder}
+          placeholderTextColor="#F1F1F1"
           value={value}
           onChangeText={onChangeText}
           secureTextEntry={!isPasswordVisible}
