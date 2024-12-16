@@ -11,7 +11,7 @@ import {
 const PasswordInput = ({
   placeholder,
   value,
-  onChangeText,
+  handleChangeText,
   style,
   title,
 }: any) => {
@@ -28,7 +28,7 @@ const PasswordInput = ({
           placeholder={placeholder}
           placeholderTextColor="#F1F1F1"
           value={value}
-          onChangeText={onChangeText}
+          onChangeText={handleChangeText}
           secureTextEntry={!isPasswordVisible}
           style={styles.textInput}
         />

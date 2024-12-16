@@ -27,6 +27,7 @@ const FormField = ({
           style={styles.txtin}
           value={value}
           placeholder={placeholder}
+          onChangeText={handleChangeText}
           placeholderTextColor="#F1F1F1"
           secureTextEntry={title === "Password" && !showPassword}
         >
