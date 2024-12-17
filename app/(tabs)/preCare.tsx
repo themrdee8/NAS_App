@@ -6,13 +6,46 @@ import PatientInfo from "@/components/PatientInfo";
 import PersonnelForm from "@/components/PersonnelForm";
 import PhysicalAndHandoff from "@/components/PhysicalAndHandoff";
 import Triage from "@/components/Triage";
+import { createPreHospitalCare } from "@/lib/appwrite";
 import { router } from "expo-router";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { useState } from "react";
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const preCare = () => {
-  const billing = () => {
-    router.push("/preBilling");
+  const [form, setForm] = useState({
+    ambulanceStation: "",
+    shiftCode: "",
+    region: "",
+  });
+
+  const [uploading, setUploading] = useState(false);
+
+  const billing = async () => {
+    if (!form.ambulanceStation || !form.shiftCode || !form.region) {
+      return Alert.alert("Please fill all required fields")
+    }
+
+    setUploading(true);
+
+    try {
+      await createPreHospitalCare({
+        ...form,
+      })
+
+      Alert.alert("Success", "Form uploaded")
+      router.push("/preBilling");
+    } catch (error: any) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setForm({
+        ambulanceStation: "",
+        shiftCode: "",
+        region: "",
+      })
+
+      setUploading(false);
+    }
   };
 
   return (
@@ -21,9 +54,30 @@ const preCare = () => {
         <Text style={styles.t1}>Pre Hospital Care Report</Text>
       </View>
       <View style={styles.v2}>
-        <FormField title="Ambulance Station" otherStyles={styles.others} />
-        <FormField title="Shift Code" otherStyles={styles.others} />
-        <FormField title="Region" otherStyles={styles.others} />
+        <FormField
+          title="Ambulance Station"
+          otherStyles={styles.others}
+          value={form.ambulanceStation}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, ambulanceStation: e })
+          }
+        />
+        <FormField
+          title="Shift Code"
+          otherStyles={styles.others}
+          value={form.shiftCode}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, shiftCode: e })
+          }
+        />
+        <FormField
+          title="Region"
+          otherStyles={styles.others}
+          value={form.region}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, region: e })
+          }
+        />
       </View>
 
       <Dispatch />
