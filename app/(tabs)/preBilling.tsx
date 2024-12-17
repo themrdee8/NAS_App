@@ -4,9 +4,53 @@ import Equipment from "@/components/Equipment";
 import FormField from "@/components/FormField";
 import Patient from "@/components/Patient";
 import Tickbox from "@/components/Tickbox";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { createPreBillingForm, signOut } from "@/lib/appwrite";
+import { router } from "expo-router";
+import { set } from "mongoose";
+import { useState } from "react";
+import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 
 const preBilling = () => {
+  const [form, setForm] = useState({
+    ambulanceStationNumber: "",
+    patientFirstName: "",
+    patientLastName: "",
+  });
+
+  const [uploading, setUploading] = useState(false);
+
+  const submit = async () => {
+    if (
+      !form.ambulanceStationNumber ||
+      !form.patientFirstName ||
+      !form.patientLastName
+    ) {
+      return Alert.alert("Please fill all required fields");
+    }
+
+    setUploading(true);
+
+    try {
+      await createPreBillingForm({
+        ...form,
+      });
+
+      Alert.alert("Success", "Form uploaded");
+      signOut();
+      router.push("/");
+    } catch (error: any) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setForm({
+        ambulanceStationNumber: "",
+        patientFirstName: "",
+        patientLastName: "",
+      });
+
+      setUploading(false);
+    }
+  };
+
   return (
     <ScrollView style={styles.Container}>
       <View>
@@ -15,9 +59,26 @@ const preBilling = () => {
       <View style={styles.v2}>
         <FormField title="Dispatch Date" otherStyles={styles.others} />
         <FormField title="TIme Left Base" otherStyles={styles.others} />
-        <FormField title="Abulance Station No." otherStyles={styles.others} />
-        <FormField title="Patient First Name" otherStyles={styles.others} />
-        <FormField title="Patient Last Name" otherStyles={styles.others} />
+        <FormField
+          title="Abulance Station No."
+          otherStyles={styles.others}
+          value={form.ambulanceStationNumber}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, ambulanceStationNumber: e })
+          }
+        />
+        <FormField
+          title="Patient First Name"
+          otherStyles={styles.others}
+          value={form.patientFirstName}
+          handleChangeText={(e: any) => setForm({ ...form, patientFirstName: e})}
+        />
+        <FormField
+          title="Patient Last Name"
+          otherStyles={styles.others}
+          value={form.patientLastName}
+          handleChangeText={(e: any) => setForm({ ...form, patientLastName: e})}
+        />
       </View>
 
       <Text style={styles.t2}>Sex</Text>
@@ -34,7 +95,6 @@ const preBilling = () => {
       <View style={styles.vCheck}>
         <Tickbox title="NHIS" />
       </View>
-        
 
       <View style={styles.v2}>
         <FormField
@@ -48,7 +108,10 @@ const preBilling = () => {
       </View>
 
       <View style={styles.v2}>
-        <FormField title="EMT Completing this Form" otherStyles={styles.others} />
+        <FormField
+          title="EMT Completing this Form"
+          otherStyles={styles.others}
+        />
         <FormField title="EMT Name" otherStyles={styles.others} />
         <FormField title="Signature" otherStyles={styles.others} />
         <FormField title="Date&Time" otherStyles={styles.others} />
@@ -65,9 +128,9 @@ const preBilling = () => {
           title="Submit Form"
           containerStyles={styles.button}
           textStyles={styles.textStyle}
+          handlePress={submit}
         />
       </View>
-
     </ScrollView>
   );
 };
