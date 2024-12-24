@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 
-const Dispatch = () => {
+const Dispatch = ({ upadteForm, updateSetForm }: any) => {
   return (
     <View style={styles.vMain}>
       <Text style={styles.tTitle}>Dispatch Information</Text>
@@ -42,11 +42,39 @@ const Dispatch = () => {
       </View>
 
       <View style={styles.v2}>
-        <FormField title="KM Reading" otherStyles={styles.others} />
+        <FormField
+          title="KM Reading"
+          otherStyles={styles.others}
+          value={upadteForm.kmReading}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, kmReading: e })
+          }
+        />
         <FormField title="Time" otherStyles={styles.others} />
-        <FormField title="Call Number" otherStyles={styles.others} />
-        <FormField title="Caller's Name" otherStyles={styles.others} />
-        <FormField title="Dispatcher" otherStyles={styles.others} />
+        <FormField
+          title="Call Number"
+          otherStyles={styles.others}
+          value={upadteForm.callNumber}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, callNumber: e })
+          }
+        />
+        <FormField
+          title="Caller's Name"
+          otherStyles={styles.others}
+          value={upadteForm.callerName}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, callerName: e })
+          }
+        />
+        <FormField
+          title="Dispatcher"
+          otherStyles={styles.others}
+          value={upadteForm.dispatcher}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, dispatcher: e })
+          }
+        />
         <FormField
           title="Time Ambulance Assigned"
           otherStyles={styles.others}
@@ -76,6 +104,10 @@ const Dispatch = () => {
           title="Comments"
           otherStyles={styles.others}
           textAreaStyle={styles.textArea}
+          value={upadteForm.comments}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, comments: e })
+          }
         />
       </View>
     </View>

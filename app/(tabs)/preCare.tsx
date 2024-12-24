@@ -11,19 +11,16 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import {PreHospitalCare} from "@/constants/formFields"
 
 const preCare = () => {
-  const [form, setForm] = useState({
-    ambulanceStation: "",
-    shiftCode: "",
-    region: "",
-  });
+  const [form, setForm] = useState(PreHospitalCare);
 
   const [uploading, setUploading] = useState(false);
 
   const billing = async () => {
     if (!form.ambulanceStation || !form.shiftCode || !form.region) {
-      return Alert.alert("Please fill all required fields")
+      return Alert.alert("Please fill all required fields");
     }
 
     setUploading(true);
@@ -31,18 +28,14 @@ const preCare = () => {
     try {
       await createPreHospitalCare({
         ...form,
-      })
+      });
 
-      Alert.alert("Success", "Form uploaded")
+      Alert.alert("Success", "Form uploaded");
       router.push("/preBilling");
     } catch (error: any) {
       Alert.alert("Error", error.message);
     } finally {
-      setForm({
-        ambulanceStation: "",
-        shiftCode: "",
-        region: "",
-      })
+      setForm(PreHospitalCare);
 
       setUploading(false);
     }
@@ -66,31 +59,27 @@ const preCare = () => {
           title="Shift Code"
           otherStyles={styles.others}
           value={form.shiftCode}
-          handleChangeText={(e: any) =>
-            setForm({ ...form, shiftCode: e })
-          }
+          handleChangeText={(e: any) => setForm({ ...form, shiftCode: e })}
         />
         <FormField
           title="Region"
           otherStyles={styles.others}
           value={form.region}
-          handleChangeText={(e: any) =>
-            setForm({ ...form, region: e })
-          }
+          handleChangeText={(e: any) => setForm({ ...form, region: e })}
         />
       </View>
 
-      <Dispatch />
+      <Dispatch upadteForm={form} updateSetForm={setForm} />
 
-      <PatientInfo />
+      <PatientInfo upadteForm={form} updateSetForm={setForm} />
 
-      <ClinicInfo />
+      <ClinicInfo upadteForm={form} updateSetForm={setForm} />
 
-      <Triage />
+      <Triage upadteForm={form} updateSetForm={setForm} />
 
-      <PhysicalAndHandoff />
+      <PhysicalAndHandoff upadteForm={form} updateSetForm={setForm} />
 
-      <PersonnelForm />
+      <PersonnelForm upadteForm={form} updateSetForm={setForm} />
 
       <View style={styles.bView}>
         <Button

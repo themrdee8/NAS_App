@@ -3,7 +3,7 @@ import React from "react";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 
-const PersonnelForm = () => {
+const PersonnelForm = ({ upadteForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>
@@ -21,23 +21,66 @@ const PersonnelForm = () => {
         <FormField
           title="Receiving Personnel's Name (print name)"
           otherStyles={styles.others}
+          value={upadteForm.receivingPersonnelName}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, receivingPersonnelName: e })
+          }
         />
         <FormField title="Patient Handoff Date" otherStyles={styles.others} />
         <FormField title="Time" otherStyles={styles.others} />
-        <FormField title="Signature" otherStyles={styles.others} />
+        <FormField
+          title="Signature"
+          otherStyles={styles.others}
+          value={upadteForm.receivingPersonnelSignature}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...upadteForm, receivingPersonnelSignature: e })
+          }
+        />
       </View>
 
       <View style={styles.VMain}>
         <Text style={styles.tTitle}>To Be Completed by EMT</Text>
         <View style={styles.v2}>
-          <FormField title="EMT 1 Service No." otherStyles={styles.others} />
-          <FormField title="Signature" otherStyles={styles.others} />
+          <FormField
+            title="EMT 1 Service No."
+            otherStyles={styles.others}
+            value={upadteForm.emt1ServiceNumber}
+            handleChangeText={(e: any) =>
+              updateSetForm({ ...upadteForm, emt1ServiceNumber: e })
+            }
+          />
+          <FormField
+            title="Signature"
+            otherStyles={styles.others}
+            value={upadteForm.emt1Signature}
+            handleChangeText={(e: any) =>
+              updateSetForm({ ...upadteForm, emt1Signature: e })
+            }
+          />
           <FormField title="Date & Time" otherStyles={styles.others} />
-          <FormField title="EMT 2 Service No." otherStyles={styles.others} />
-          <FormField title="Signature" otherStyles={styles.others} />
+          <FormField
+            title="EMT 2 Service No."
+            otherStyles={styles.others}
+            value={upadteForm.emt2ServiceNumber}
+            handleChangeText={(e: any) =>
+              updateSetForm({ ...upadteForm, emt2ServiceNumber: e })
+            }
+          />
+          <FormField
+            title="Signature"
+            otherStyles={styles.others}
+            value={upadteForm.emt2Signature}
+            handleChangeText={(e: any) =>
+              updateSetForm({ ...upadteForm, emt2Signature: e })
+            }
+          />
           <FormField
             title="EMT Gave Oral Report To: (Name)"
             otherStyles={styles.others}
+            value={upadteForm.emtGaveOralReportToName}
+            handleChangeText={(e: any) =>
+              updateSetForm({ ...upadteForm, emtGaveOralReportToName: e })
+            }
           />
         </View>
       </View>
