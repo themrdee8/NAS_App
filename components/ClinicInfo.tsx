@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 
-const ClinicInfo = ({ upadteForm, updateSetForm }: any) => {
+const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Clinical Information</Text>
@@ -10,18 +10,18 @@ const ClinicInfo = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Chief Complaint or Reason for Transport"
           otherStyles={styles.others}
-          value={upadteForm.chiefComplaint}
+          value={updateForm.chiefComplaint}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, chiefComplaint: e })
+            updateSetForm({ ...updateForm, chiefComplaint: e })
           }
         />
         <FormField
           title="Description of Problem"
           otherStyles={styles.others}
           textAreaStyle={styles.textArea}
-          value={upadteForm.descriptionOfProblem}
+          value={updateForm.descriptionOfProblem}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, descriptionOfProblem: e })
+            updateSetForm({ ...updateForm, descriptionOfProblem: e })
           }
         />
       </View>
@@ -42,17 +42,17 @@ const ClinicInfo = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Recent Medical History"
           otherStyles={styles.others}
-          value={upadteForm.recentMedicalHistory}
+          value={updateForm.recentMedicalHistory}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, recentMedicalHistory: e })
+            updateSetForm({ ...updateForm, recentMedicalHistory: e })
           }
         />
         <FormField
           title="Recent Medications"
           otherStyles={styles.others}
-          value={upadteForm.recentMedications}
+          value={updateForm.recentMedications}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, recentMedications: e })
+            updateSetForm({ ...updateForm, recentMedications: e })
           }
         />
       </View>

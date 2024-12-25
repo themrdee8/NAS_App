@@ -2,8 +2,9 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
+import DateTimeInput from "./DateTimeField";
 
-const PhysicalAndHandoff = ({ upadteForm, updateSetForm }: any) => {
+const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Physical Exams and Vital Signs</Text>
@@ -12,51 +13,58 @@ const PhysicalAndHandoff = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="BP"
           otherStyles={styles.others}
-          value={upadteForm.bp}
-          handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, bp: e })
-          }
+          value={updateForm.bp}
+          handleChangeText={(e: any) => updateSetForm({ ...updateForm, bp: e })}
         />
         <FormField
           title="Pulse Rate"
           otherStyles={styles.others}
-          value={upadteForm.pulseRate}
+          value={updateForm.pulseRate}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, pulseRate: e })
+            updateSetForm({ ...updateForm, pulseRate: e })
           }
         />
         <FormField
           title="Resp. Rate"
           otherStyles={styles.others}
-          value={upadteForm.respRate}
+          value={updateForm.respRate}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, respRate: e })
+            updateSetForm({ ...updateForm, respRate: e })
           }
         />
         <FormField
           title="SpO2"
           otherStyles={styles.others}
-          value={upadteForm.spO2}
+          value={updateForm.spO2}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, spO2: e })
+            updateSetForm({ ...updateForm, spO2: e })
           }
         />
         <FormField
           title="Temp. (°C)"
           otherStyles={styles.others}
-          value={upadteForm.temp}
+          value={updateForm.temp}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, temp: e })
+            updateSetForm({ ...updateForm, temp: e })
           }
         />
-        <FormField title="Time" otherStyles={styles.others} />
+        <DateTimeInput
+          title="Time"
+          mode="time"
+          value={updateForm.vitalSignsTime}
+          handleChange={(e: any) =>
+            updateSetForm({ ...updateForm, vitalSignsTime: e })
+          }
+          placeholder="Select a time"
+          otherStyles={styles.others}
+        />
         <FormField
           title="Additional Interventions"
           otherStyles={styles.others}
           textAreaStyle={styles.textArea}
-          value={upadteForm.additionalInterventions}
+          value={updateForm.additionalInterventions}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, additionalInterventions: e })
+            updateSetForm({ ...updateForm, additionalInterventions: e })
           }
         />
       </View>
@@ -68,9 +76,9 @@ const PhysicalAndHandoff = ({ upadteForm, updateSetForm }: any) => {
             title="Field Diagnosis / Observations (details of chief complaint)"
             otherStyles={styles.others}
             textAreaStyle={styles.textArea}
-            value={upadteForm.fieldDiagnosisObservations}
+            value={updateForm.fieldDiagnosisObservations}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, fieldDiagnosisObservations: e })
+              updateSetForm({ ...updateForm, fieldDiagnosisObservations: e })
             }
           />
         </View>
@@ -90,36 +98,45 @@ const PhysicalAndHandoff = ({ upadteForm, updateSetForm }: any) => {
           <FormField
             title="Receiving Facility Name"
             otherStyles={styles.others}
-            value={upadteForm.receivingFacility}
+            value={updateForm.receivingFacility}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, receivingFacility: e })
+              updateSetForm({ ...updateForm, receivingFacility: e })
             }
           />
           <FormField
             title="Receiving Department"
             otherStyles={styles.others}
-            value={upadteForm.receivingDepartment}
+            value={updateForm.receivingDepartment}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, receivingDepartment: e })
+              updateSetForm({ ...updateForm, receivingDepartment: e })
             }
           />
           <FormField
             title="Receiving Doctor or Nurse (print name)"
             otherStyles={styles.others}
-            value={upadteForm.receivingDoctorOrNurse}
+            value={updateForm.receivingDoctorOrNurse}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, receivingDoctorOrNurse: e })
+              updateSetForm({ ...updateForm, receivingDoctorOrNurse: e })
             }
           />
           <FormField
             title="Signature"
             otherStyles={styles.others}
-            value={upadteForm.signature}
+            value={updateForm.signature}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, signature: e })
+              updateSetForm({ ...updateForm, signature: e })
             }
           />
-          <FormField title="Date & Time" otherStyles={styles.others} />
+          <DateTimeInput
+            title="Date & Time"
+            mode="datetime"
+            value={updateForm.dateAndTime}
+            handleChange={(e: any) =>
+              updateSetForm({ ...updateForm, dateAndTime: e })
+            }
+            placeholder="Select a date and time"
+            otherStyles={styles.others}
+          />
         </View>
       </View>
     </View>

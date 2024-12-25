@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 
-const PatientInfo = ({ upadteForm, updateSetForm }: any) => {
+const PatientInfo = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Patient Information</Text>
@@ -10,17 +10,17 @@ const PatientInfo = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Patient Name"
           otherStyles={styles.others}
-          value={upadteForm.patientName}
+          value={updateForm.patientName}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, patientName: e })
+            updateSetForm({ ...updateForm, patientName: e })
           }
         />
         <FormField
           title="Age"
           otherStyles={styles.others}
-          value={upadteForm.age}
+          value={updateForm.age}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, age: e })
+            updateSetForm({ ...updateForm, age: e })
           }
         />
       </View>
@@ -35,25 +35,25 @@ const PatientInfo = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Address"
           otherStyles={styles.others}
-          value={upadteForm.address}
+          value={updateForm.address}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, address: e })
+            updateSetForm({ ...updateForm, address: e })
           }
         />
         <FormField
           title="Telephone"
           otherStyles={styles.others}
-          value={upadteForm.telephone}
+          value={updateForm.telephone}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, telephone: e })
+            updateSetForm({ ...updateForm, telephone: e })
           }
         />
         <FormField
           title="ID No./Passport No."
           otherStyles={styles.others}
-          value={upadteForm.idPassportNumber}
+          value={updateForm.idPassportNumber}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, idPassportNumber: e })
+            updateSetForm({ ...updateForm, idPassportNumber: e })
           }
         />
       </View>
@@ -63,17 +63,17 @@ const PatientInfo = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Name"
           otherStyles={styles.others}
-          value={upadteForm.contactPersonName}
+          value={updateForm.contactPersonName}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, contactPersonName: e })
+            updateSetForm({ ...updateForm, contactPersonName: e })
           }
         />
         <FormField
           title="Telephone"
           otherStyles={styles.others}
-          value={upadteForm.contactPersonTelephone}
+          value={updateForm.contactPersonTelephone}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, contactPersonTelephone: e })
+            updateSetForm({ ...updateForm, contactPersonTelephone: e })
           }
         />
       </View>

@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 
-const Triage = ({ upadteForm, updateSetForm }: any) => {
+const Triage = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Triage</Text>

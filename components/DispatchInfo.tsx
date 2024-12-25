@@ -1,13 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
+import DateTimeInput from "./DateTimeField";
 
-const Dispatch = ({ upadteForm, updateSetForm }: any) => {
+const Dispatch = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.vMain}>
       <Text style={styles.tTitle}>Dispatch Information</Text>
       <View style={styles.v2}>
-        <FormField title="Dispatch Date" otherStyles={styles.others} />
+        <DateTimeInput
+          title="Dispatch Date"
+          mode="date"
+          value={updateForm.dispatchDate}
+          handleChange={(e: any) => updateSetForm({...updateForm, dispatchDate: e})}
+          placeholder="Select a date"
+          otherStyles={styles.others}
+        />
       </View>
 
       <Text style={styles.t2}>Service Unit Contact</Text>
@@ -45,49 +53,75 @@ const Dispatch = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="KM Reading"
           otherStyles={styles.others}
-          value={upadteForm.kmReading}
+          value={updateForm.kmReading}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, kmReading: e })
+            updateSetForm({ ...updateForm, kmReading: e })
           }
         />
-        <FormField title="Time" otherStyles={styles.others} />
+        <DateTimeInput
+          title="Time"
+          mode="time"
+          value={updateForm.time}
+          handleChange={(e: any) => updateSetForm({...updateForm, time: e})}
+          placeholder="Select a time"
+          otherStyles={styles.others}
+        />
         <FormField
           title="Call Number"
           otherStyles={styles.others}
-          value={upadteForm.callNumber}
+          value={updateForm.callNumber}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, callNumber: e })
+            updateSetForm({ ...updateForm, callNumber: e })
           }
         />
         <FormField
           title="Caller's Name"
           otherStyles={styles.others}
-          value={upadteForm.callerName}
+          value={updateForm.callerName}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, callerName: e })
+            updateSetForm({ ...updateForm, callerName: e })
           }
         />
         <FormField
           title="Dispatcher"
           otherStyles={styles.others}
-          value={upadteForm.dispatcher}
+          value={updateForm.dispatcher}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, dispatcher: e })
+            updateSetForm({ ...updateForm, dispatcher: e })
           }
         />
-        <FormField
+        <DateTimeInput
           title="Time Ambulance Assigned"
+          mode="time"
+          value={updateForm.timeAmbulanceAssigned}
+          handleChange={(e: any) => updateSetForm({...updateForm, timeAmbulanceAssigned: e})}
+          placeholder="Select a time"
           otherStyles={styles.others}
         />
-        <FormField
+        <DateTimeInput
           title="Time Ambulance Arrived Scene"
+          mode="time"
+          value={updateForm.timeAmbulanceArrivedScene}
+          handleChange={(e: any) => updateSetForm({...updateForm, timeAmbulanceArrivedScene: e})}
+          placeholder="Select a time"
           otherStyles={styles.others}
         />
-        <FormField
+        <DateTimeInput
           title="Time Ambulance Left Scene"
+          mode="time"
+          value={updateForm.timeAmbulanceLeftScene}
+          handleChange={(e: any) => updateSetForm({...updateForm, timeAmbulanceLeftScene: e})}
+          placeholder="Select a time"
           otherStyles={styles.others}
         />
-        <FormField title="Time Arrived Facility" otherStyles={styles.others} />
+        <DateTimeInput
+          title="Time Arrived Facility"
+          mode="time"
+          value={updateForm.timeArrivedFacility}
+          handleChange={(e: any) => updateSetForm({...updateForm, timeArrivedFacility: e})}
+          placeholder="Select a time"
+          otherStyles={styles.others}
+        />
       </View>
 
       <Text style={styles.t2}>Arrived At Scene (tick one)</Text>
@@ -104,9 +138,9 @@ const Dispatch = ({ upadteForm, updateSetForm }: any) => {
           title="Comments"
           otherStyles={styles.others}
           textAreaStyle={styles.textArea}
-          value={upadteForm.comments}
+          value={updateForm.comments}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, comments: e })
+            updateSetForm({ ...updateForm, comments: e })
           }
         />
       </View>

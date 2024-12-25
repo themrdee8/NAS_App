@@ -2,8 +2,9 @@ import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
+import DateTimeInput from "./DateTimeField";
 
-const PersonnelForm = ({ upadteForm, updateSetForm }: any) => {
+const PersonnelForm = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>
@@ -21,19 +22,33 @@ const PersonnelForm = ({ upadteForm, updateSetForm }: any) => {
         <FormField
           title="Receiving Personnel's Name (print name)"
           otherStyles={styles.others}
-          value={upadteForm.receivingPersonnelName}
+          value={updateForm.receivingPersonnelName}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, receivingPersonnelName: e })
+            updateSetForm({ ...updateForm, receivingPersonnelName: e })
           }
         />
-        <FormField title="Patient Handoff Date" otherStyles={styles.others} />
-        <FormField title="Time" otherStyles={styles.others} />
+        <DateTimeInput
+          title="Patient Handoff Date"
+          mode="date"
+          value={updateForm.patientHandoffDate}
+          handleChange={(e: any) => updateSetForm({...updateForm, patientHandoffDate: e})}
+          placeholder="Select a date and time"
+          otherStyles={styles.others}
+        />
+        <DateTimeInput
+          title="Time"
+          mode="time"
+          value={updateForm.patientHandoffTime}
+          handleChange={(e: any) => updateSetForm({...updateForm, patientHandoffTime: e})}
+          placeholder="Select a date and time"
+          otherStyles={styles.others}
+        />
         <FormField
           title="Signature"
           otherStyles={styles.others}
-          value={upadteForm.receivingPersonnelSignature}
+          value={updateForm.receivingPersonnelSignature}
           handleChangeText={(e: any) =>
-            updateSetForm({ ...upadteForm, receivingPersonnelSignature: e })
+            updateSetForm({ ...updateForm, receivingPersonnelSignature: e })
           }
         />
       </View>
@@ -44,42 +59,49 @@ const PersonnelForm = ({ upadteForm, updateSetForm }: any) => {
           <FormField
             title="EMT 1 Service No."
             otherStyles={styles.others}
-            value={upadteForm.emt1ServiceNumber}
+            value={updateForm.emt1ServiceNumber}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, emt1ServiceNumber: e })
+              updateSetForm({ ...updateForm, emt1ServiceNumber: e })
             }
           />
           <FormField
             title="Signature"
             otherStyles={styles.others}
-            value={upadteForm.emt1Signature}
+            value={updateForm.emt1Signature}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, emt1Signature: e })
+              updateSetForm({ ...updateForm, emt1Signature: e })
             }
           />
-          <FormField title="Date & Time" otherStyles={styles.others} />
+          <DateTimeInput
+          title="Date & Time"
+          mode="datetime"
+          value={updateForm.emtDateTime}
+          handleChange={(e: any) => updateSetForm({...updateForm, emtDateTime: e})}
+          placeholder="Select a date and time"
+          otherStyles={styles.others}
+        />
           <FormField
             title="EMT 2 Service No."
             otherStyles={styles.others}
-            value={upadteForm.emt2ServiceNumber}
+            value={updateForm.emt2ServiceNumber}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, emt2ServiceNumber: e })
+              updateSetForm({ ...updateForm, emt2ServiceNumber: e })
             }
           />
           <FormField
             title="Signature"
             otherStyles={styles.others}
-            value={upadteForm.emt2Signature}
+            value={updateForm.emt2Signature}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, emt2Signature: e })
+              updateSetForm({ ...updateForm, emt2Signature: e })
             }
           />
           <FormField
             title="EMT Gave Oral Report To: (Name)"
             otherStyles={styles.others}
-            value={upadteForm.emtGaveOralReportToName}
+            value={updateForm.emtGaveOralReportToName}
             handleChangeText={(e: any) =>
-              updateSetForm({ ...upadteForm, emtGaveOralReportToName: e })
+              updateSetForm({ ...updateForm, emtGaveOralReportToName: e })
             }
           />
         </View>

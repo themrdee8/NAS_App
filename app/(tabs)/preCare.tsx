@@ -69,17 +69,17 @@ const preCare = () => {
         />
       </View>
 
-      <Dispatch upadteForm={form} updateSetForm={setForm} />
+      <Dispatch updateForm={form} updateSetForm={setForm} />
 
-      <PatientInfo upadteForm={form} updateSetForm={setForm} />
+      <PatientInfo updateForm={form} updateSetForm={setForm} />
 
-      <ClinicInfo upadteForm={form} updateSetForm={setForm} />
+      <ClinicInfo updateForm={form} updateSetForm={setForm} />
 
-      <Triage upadteForm={form} updateSetForm={setForm} />
+      <Triage updateForm={form} updateSetForm={setForm} />
 
-      <PhysicalAndHandoff upadteForm={form} updateSetForm={setForm} />
+      <PhysicalAndHandoff updateForm={form} updateSetForm={setForm} />
 
-      <PersonnelForm upadteForm={form} updateSetForm={setForm} />
+      <PersonnelForm updateForm={form} updateSetForm={setForm} />
 
       <View style={styles.bView}>
         <Button
