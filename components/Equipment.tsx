@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import Tickbox from "./Tickbox";
 
-const Equipment = () => {
+const Equipment = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.vMain}>
       <Text style={styles.tTitle}>Equipment Used in Ambulance</Text>

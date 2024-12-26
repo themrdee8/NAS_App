@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import Tickbox from "./Tickbox";
 import FormField from "./FormField";
 
-const ClinicalImpression = () => {
+const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.vMain}>
       <Text style={styles.tTitle}>Clinical Impression</Text>
@@ -91,6 +91,10 @@ const ClinicalImpression = () => {
         <FormField
           title={<Tickbox title="Other (specify)" centerItem={styles.center} />}
           otherStyles={styles.others}
+          value={updateForm.generalMedicalOther}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...updateForm, generalMedicalOther: e })
+          }
         />
       </View>
 

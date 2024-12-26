@@ -3,7 +3,7 @@ import { View } from "react-native";
 import Tickbox from "./Tickbox";
 import FormField from "./FormField";
 
-const Patient = () => {
+const Patient = ({ updateForm, updateSetForm }: any) => {
   return (
     <View style={styles.vMain}>
       <Text style={styles.tTitle}>Patient's Mechanism of Injury</Text>
@@ -32,6 +32,10 @@ const Patient = () => {
         <FormField
           title={<Tickbox title="Other (specify)" centerItem={styles.center} />}
           otherStyles={styles.others}
+          value={updateForm.patientMechanismOfInjuryOther}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...updateForm, patientMechanismOfInjuryOther: e })
+          }
         />
       </View>
 
@@ -59,6 +63,10 @@ const Patient = () => {
         <FormField
           title={<Tickbox title="Other problem not listed (specify)" centerItem={styles.center} />}
           otherStyles={styles.others}
+          value={updateForm.otherProblemNotListed}
+          handleChangeText={(e: any) =>
+            updateSetForm({ ...updateForm, otherProblemNotListed: e })
+          }
         />
       </View>
       </View>
