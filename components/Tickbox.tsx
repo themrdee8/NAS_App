@@ -1,9 +1,18 @@
 import { StyleSheet, Text, View } from "react-native";
 import Checkbox from "expo-checkbox";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Tickbox = ({ title, centerItem }: any) => {
-  const [isChecked, setIsChecked] = useState(false);
+const Tickbox = ({ title, centerItem, value, handleChange }: any) => {
+  const [isChecked, setIsChecked] = useState(value || false);
+
+  useEffect(() => {
+    setIsChecked(value);
+  }, [value]);
+
+  const handleLocalChange = (newValue: boolean) => {
+    setIsChecked(newValue);
+    handleChange(newValue);
+  }
 
   return (
     <View style={[styles.row, centerItem]}>
@@ -11,7 +20,7 @@ const Tickbox = ({ title, centerItem }: any) => {
         style={styles.checkbox}
         color="#68C44C"
         value={isChecked}
-        onValueChange={setIsChecked}
+        onValueChange={handleLocalChange}
       />
       <Text style={styles.text}>{title}</Text>
     </View>

@@ -27,8 +27,23 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
 
       <Text style={styles.t2}>Gender</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Male" />
-        <Tickbox title="Female" />
+        <Tickbox
+          title="Male"
+          value={updateForm.gender === "male"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, gender: isChecked ? "male" : null })
+          }
+        />
+        <Tickbox
+          title="Female"
+          value={updateForm.gender === "female"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              gender: isChecked ? "female" : null,
+            })
+          }
+        />
       </View>
 
       <View style={styles.v2}>
@@ -80,15 +95,60 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
 
       <Text style={styles.t2}>Relationship</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Father/Mother" />
-        <Tickbox title="Spouse" />
-        <Tickbox title="Other" />
+        <Tickbox
+          title="Father/Mother"
+          value={updateForm.relationship === "fatherMother"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              relationship: isChecked ? "fatherMother" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="Spouse"
+          value={updateForm.relationship === "spouse"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              relationship: isChecked ? "spouse" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="Other"
+          value={updateForm.relationship === "other"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              relationship: isChecked ? "other" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={styles.t2}>Patient Refused Treatment</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Yes" />
-        <Tickbox title="No" />
+        <Tickbox
+          title="Yes"
+          value={updateForm.patientRefusedTreatment === "yes"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              patientRefusedTreatment: isChecked ? "yes" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="No"
+          value={updateForm.patientRefusedTreatment === "no"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              patientRefusedTreatment: isChecked ? "no" : null,
+            })
+          }
+        />
       </View>
     </View>
   );

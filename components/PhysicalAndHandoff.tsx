@@ -88,10 +88,46 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         <Text style={styles.tTitle}>Patient Handoff</Text>
         <Text style={styles.t2}>Vital Signs (first record)</Text>
         <View style={styles.vCheck}>
-          <Tickbox title="Improved" />
-          <Tickbox title="Unchanged" />
-          <Tickbox title="Deteriorated" />
-          <Tickbox title="Died En Route" />
+          <Tickbox
+            title="Improved"
+            value={updateForm.patientCondition === "improved"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                patientCondition: isChecked ? "improved" : null,
+              })
+            }
+          />
+          <Tickbox
+            title="Unchanged"
+            value={updateForm.patientCondition === "unchanged"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                patientCondition: isChecked ? "unchanged" : null,
+              })
+            }
+          />
+          <Tickbox
+            title="Deteriorated"
+            value={updateForm.patientCondition === "deteriorated"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                patientCondition: isChecked ? "deteriorated" : null,
+              })
+            }
+          />
+          <Tickbox
+            title="Died En Route"
+            value={updateForm.patientCondition === "diedEnRoute"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                patientCondition: isChecked ? "diedEnRoute" : null,
+              })
+            }
+          />
         </View>
 
         <View style={styles.v2}>

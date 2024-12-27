@@ -8,29 +8,89 @@ const Triage = ({ updateForm, updateSetForm }: any) => {
     <View style={styles.VMain}>
       <Text style={styles.tTitle}>Triage</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Red" />
-        <Tickbox title="Yellow" />
-        <Tickbox title="Green" />
-        <Tickbox title="Black" />
+        <Tickbox
+          title="Red"
+          value={updateForm.triage === "red"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, triage: isChecked ? "red" : null })
+          }
+        />
+        <Tickbox
+          title="Yellow"
+          value={updateForm.triage === "yellow"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, triage: isChecked ? "yellow" : null })
+          }
+        />
+        <Tickbox
+          title="Green"
+          value={updateForm.triage === "green"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, triage: isChecked ? "green" : null })
+          }
+        />
+        <Tickbox
+          title="Black"
+          value={updateForm.triage === "black"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, triage: isChecked ? "black" : null })
+          }
+        />
       </View>
 
       <Text style={styles.t2}>Primary Assessment (tick as appropriate)</Text>
       <Text style={styles.t2}>Breathing</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Adequate" />
-        <Tickbox title="Inadequate" />
+        <Tickbox
+          title="Adequate"
+          value={updateForm.breathing === "adequate"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, breathing: isChecked ? "adequate" : null })
+          }
+        />
+        <Tickbox
+          title="Inadequate"
+          value={updateForm.breathing === "inadequate"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, breathing: isChecked ? "inadequate" : null })
+          }
+        />
       </View>
 
       <Text style={styles.t2}>Circulation</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Pulse Present" />
-        <Tickbox title="Pulse Absent" />
+        <Tickbox
+          title="Pulse Present"
+          value={updateForm.circulation === "pulsePresent"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, circulation: isChecked ? "pulsePresent" : null })
+          }
+        />
+        <Tickbox
+          title="Pulse Absent"
+          value={updateForm.circulation === "pulseAbsent"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, circulation: isChecked ? "pulseAbsent" : null })
+          }
+        />
       </View>
 
       <Text style={styles.t2}> Consciousness</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Conscious" />
-        <Tickbox title="Unconscious" />
+        <Tickbox
+          title="Conscious"
+          value={updateForm.consciousness === "conscious"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, consciousness: isChecked ? "conscious" : null })
+          }
+        />
+        <Tickbox
+          title="Unconscious"
+          value={updateForm.consciousness === "unconscious"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({ ...updateForm, consciousness: isChecked ? "unconscious" : null })
+          }
+        />
       </View>
     </View>
   );

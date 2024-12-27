@@ -12,10 +12,46 @@ const PersonnelForm = ({ updateForm, updateSetForm }: any) => {
       </Text>
       <Text style={styles.t2}>Patient Condition (select one)</Text>
       <View style={styles.vCheck}>
-        <Tickbox title="Red" />
-        <Tickbox title="Yellow" />
-        <Tickbox title="Green" />
-        <Tickbox title="Black" />
+        <Tickbox
+          title="Red"
+          value={updateForm.docOnlyPatientCondition === "red"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              docOnlyPatientCondition: isChecked ? "red" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="Yellow"
+          value={updateForm.docOnlyPatientCondition === "yellow"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              docOnlyPatientCondition: isChecked ? "yellow" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="Green"
+          value={updateForm.docOnlyPatientCondition === "green"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              docOnlyPatientCondition: isChecked ? "green" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="Black"
+          value={updateForm.docOnlyPatientCondition === "black"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              docOnlyPatientCondition: isChecked ? "black" : null,
+            })
+          }
+        />
       </View>
 
       <View style={styles.v2}>
@@ -31,7 +67,9 @@ const PersonnelForm = ({ updateForm, updateSetForm }: any) => {
           title="Patient Handoff Date"
           mode="date"
           value={updateForm.patientHandoffDate}
-          handleChange={(e: any) => updateSetForm({...updateForm, patientHandoffDate: e})}
+          handleChange={(e: any) =>
+            updateSetForm({ ...updateForm, patientHandoffDate: e })
+          }
           placeholder="Select a date and time"
           otherStyles={styles.others}
         />
@@ -39,7 +77,9 @@ const PersonnelForm = ({ updateForm, updateSetForm }: any) => {
           title="Time"
           mode="time"
           value={updateForm.patientHandoffTime}
-          handleChange={(e: any) => updateSetForm({...updateForm, patientHandoffTime: e})}
+          handleChange={(e: any) =>
+            updateSetForm({ ...updateForm, patientHandoffTime: e })
+          }
           placeholder="Select a date and time"
           otherStyles={styles.others}
         />
@@ -73,13 +113,15 @@ const PersonnelForm = ({ updateForm, updateSetForm }: any) => {
             }
           />
           <DateTimeInput
-          title="Date & Time"
-          mode="datetime"
-          value={updateForm.emtDateTime}
-          handleChange={(e: any) => updateSetForm({...updateForm, emtDateTime: e})}
-          placeholder="Select a date and time"
-          otherStyles={styles.others}
-        />
+            title="Date & Time"
+            mode="datetime"
+            value={updateForm.emtDateTime}
+            handleChange={(e: any) =>
+              updateSetForm({ ...updateForm, emtDateTime: e })
+            }
+            placeholder="Select a date and time"
+            otherStyles={styles.others}
+          />
           <FormField
             title="EMT 2 Service No."
             otherStyles={styles.others}
