@@ -11,6 +11,8 @@ import { useState } from "react";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { PreBillingCode } from "@/constants/formFields";
 import DateTimeInput from "@/components/DateTimeField";
+import SexTickbox from "@/components/SexTickbox";
+import InsuranceTickbox from "@/components/InsuranceTickbox";
 
 const preBilling = () => {
   const [form, setForm] = useState(PreBillingCode);
@@ -18,11 +20,7 @@ const preBilling = () => {
   const [uploading, setUploading] = useState(false);
 
   const submit = async () => {
-    if (
-      !form.ambulanceStationNumber ||
-      !form.patientFirstName ||
-      !form.patientLastName
-    ) {
+    if (!form) {
       return Alert.alert("Please fill all required fields");
     }
 
@@ -33,7 +31,7 @@ const preBilling = () => {
         ...form,
       });
 
-      Alert.alert("Success", "Form uploaded");
+      Alert.alert("Success", "Form submitted successfully!");
       signOut();
       router.push("/");
     } catch (error: any) {
@@ -93,39 +91,51 @@ const preBilling = () => {
         />
       </View>
 
-      <Text style={styles.t2}>Sex</Text>
-      <View style={styles.vCheck}>
-        <Tickbox title="Male" />
-        <Tickbox title="Female" />
-      </View>
-
-      <View style={styles.v2}>
-        <FormField title="Age/Date of Birth" otherStyles={styles.others} />
-      </View>
-
-      <Text style={styles.t2}>Insurance</Text>
-      <View style={styles.vCheck}>
-        <Tickbox title="NHIS" />
-      </View>
+      <SexTickbox updateForm={form} updateSetForm={setForm} />
 
       <View style={styles.v2}>
         <FormField
-          title={<Tickbox title="Other (specify)" centerItem={styles.center} />}
+          title="Age/Date of Birth"
           otherStyles={styles.others}
+          value={form.ageDateOfBirth}
+          handleChangeText={(e: any) => setForm({ ...form, ageDateOfBirth: e })}
         />
       </View>
 
+      <InsuranceTickbox updateForm={form} updateSetForm={setForm} />
+
       <View style={styles.v2}>
-        <FormField title="Insurance Company" otherStyles={styles.others} />
+        <FormField
+          title="Insurance Company"
+          otherStyles={styles.others}
+          value={form.insuranceCompany}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, insuranceCompany: e })
+          }
+        />
       </View>
 
       <View style={styles.v2}>
         <FormField
           title="EMT Completing this Form"
           otherStyles={styles.others}
+          value={form.emtCompletingThisForm}
+          handleChangeText={(e: any) =>
+            setForm({ ...form, emtCompletingThisForm: e })
+          }
         />
-        <FormField title="EMT Name" otherStyles={styles.others} />
-        <FormField title="Signature" otherStyles={styles.others} />
+        <FormField
+          title="EMT Name"
+          otherStyles={styles.others}
+          value={form.emtName}
+          handleChangeText={(e: any) => setForm({ ...form, emtName: e })}
+        />
+        <FormField
+          title="Signature"
+          otherStyles={styles.others}
+          value={form.emtSignature}
+          handleChangeText={(e: any) => setForm({ ...form, emtSignature: e })}
+        />
         <DateTimeInput
           title="Date & Time"
           mode="datetime"

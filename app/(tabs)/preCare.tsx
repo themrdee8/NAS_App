@@ -11,7 +11,7 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {PreHospitalCare} from "@/constants/formFields"
+import { PreHospitalCare } from "@/constants/formFields";
 
 const preCare = () => {
   const [form, setForm] = useState(PreHospitalCare);
@@ -19,7 +19,7 @@ const preCare = () => {
   const [uploading, setUploading] = useState(false);
 
   const billing = async () => {
-    if (!form.ambulanceStation || !form.shiftCode || !form.region) {
+    if (!form) {
       return Alert.alert("Please fill all required fields");
     }
 
