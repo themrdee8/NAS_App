@@ -179,11 +179,11 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
           title={
             <Tickbox
               title="Other (specify)"
-              value={updateForm.gender === "other"}
+              value={updateForm.patientMechanismOfInjury === "other"}
               handleChange={(isChecked: boolean) =>
                 updateSetForm({
                   ...updateForm,
-                  gender: isChecked ? "other" : null,
+                  patientMechanismOfInjury: isChecked ? "other" : null,
                 })
               }
               centerItem={styles.center}
