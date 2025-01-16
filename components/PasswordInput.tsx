@@ -12,7 +12,6 @@ const PasswordInput = ({
   placeholder,
   value,
   handleChangeText,
-  style,
   title,
 }: any) => {
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -54,38 +53,38 @@ const PasswordInput = ({
 export default PasswordInput;
 
 const styles = StyleSheet.create({
-    inputContainer: {
-      width: '93%',
-      marginVertical: 10,
-    },
-    title: {
-      fontSize: 16,
-      fontWeight: 'bold',
-      color: '#68C44C',
-      marginBottom: 5,
-    },
-    inputWrapper: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      borderColor: 'white',
-      borderWidth: 1,
-      borderRadius: 10,
-      paddingHorizontal: 10,
-      height: 45,
-      backgroundColor: "#5D6F54",
-    },
-    textInput: {
-      flex: 1,
-      padding: 10,
-      fontSize: 16,
-      color: 'white',
-    },
-    iconContainer: {
-      padding: 5,
-    },
-    icon: {
-      width: 24,
-      height: 24,
-      tintColor: '#68C44C',
-    },
-  });
+  inputContainer: {
+    width: "93%",
+    marginVertical: 10,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: "bold",
+    color: "#68C44C",
+    marginBottom: 5,
+  },
+  inputWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    borderColor: "white",
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    height: 45,
+    backgroundColor: "#5D6F54",
+  },
+  textInput: {
+    flex: 1,
+    padding: 10,
+    fontSize: 16,
+    color: "white",
+  },
+  iconContainer: {
+    padding: 5,
+  },
+  icon: {
+    width: 24,
+    height: 24,
+    tintColor: "#68C44C",
+  },
+});

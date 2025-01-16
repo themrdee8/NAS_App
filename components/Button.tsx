@@ -1,18 +1,32 @@
-import { NativeWindStyleSheet } from "nativewind";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-const Button = ({ handlePress, title, containerStyles, textStyles, image1, image2 }: any) => {
+const Button = ({
+  handlePress,
+  title,
+  containerStyles,
+  textStyles,
+  image1,
+  image2,
+}: any) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
       style={[styles.op, containerStyles]}
     >
       <View style={styles.v1}>
-        <Image style={styles.img} source={image2} resizeMode="contain" tintColor="white" />
-        <Text style={[styles.t1, textStyles]} >
-          {title}
-        </Text>
-        <Image style={styles.img} source={image1} resizeMode="contain" tintColor="white" />
+        <Image
+          style={styles.img}
+          source={image2}
+          resizeMode="contain"
+          tintColor="white"
+        />
+        <Text style={[styles.t1, textStyles]}>{title}</Text>
+        <Image
+          style={styles.img}
+          source={image1}
+          resizeMode="contain"
+          tintColor="white"
+        />
       </View>
     </TouchableOpacity>
   );
@@ -43,5 +57,5 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     alignItems: "center",
     justifyContent: "space-between",
-  }
+  },
 });

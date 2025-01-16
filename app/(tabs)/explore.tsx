@@ -1,17 +1,10 @@
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { StyleSheet, Image, Platform, View, Text, Alert } from "react-native";
-
-import { Collapsible } from "@/components/Collapsible";
-import { ExternalLink } from "@/components/ExternalLink";
-import ParallaxScrollView from "@/components/ParallaxScrollView";
-import { ThemedText } from "@/components/ThemedText";
-import { ThemedView } from "@/components/ThemedView";
+import { StyleSheet, Image, View, Text, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "@/components/FormField";
 import Button from "@/components/Button";
 import { router } from "expo-router";
 import PasswordInput from "@/components/PasswordInput";
-import { createUser, signIn } from "@/lib/appwrite";
+import { signIn } from "@/lib/appwrite";
 import { useState } from "react";
 
 export default function TabTwoScreen() {
@@ -29,7 +22,7 @@ export default function TabTwoScreen() {
     setIsSubmitting(true);
 
     try {
-      await signIn(form.email, form.password)
+      await signIn(form.email, form.password);
       router.replace("/preCare");
     } catch (error: any) {
       Alert.alert("Error", error.message);
