@@ -1,13 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Tickbox from "./Tickbox";
 import FormField from "./FormField";
+import { sharedStyles } from "@/sharedStyles";
 
 const InsuranceTickbox = ({ updateForm, updateSetForm }: any) => {
   return (
     <View>
-      <Text style={styles.t2}>Insurance</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Insurance</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="NHIS"
           value={updateForm.insurance === "nhis"}
@@ -20,7 +21,7 @@ const InsuranceTickbox = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title={
             <Tickbox
@@ -32,10 +33,10 @@ const InsuranceTickbox = ({ updateForm, updateSetForm }: any) => {
                   insurance: isChecked ? "other" : null,
                 })
               }
-              centerItem={styles.center}
+              centerItem={sharedStyles.center}
             />
           }
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.insuranceOther}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, insuranceOther: e })
@@ -47,63 +48,3 @@ const InsuranceTickbox = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default InsuranceTickbox;
-
-const styles = StyleSheet.create({
-  Container: {
-    backgroundColor: "#10251E",
-    height: "100%",
-    paddingTop: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  button: {
-    padding: 0,
-    marginTop: 40,
-    borderRadius: 8,
-    width: 399,
-    marginLeft: 14,
-  },
-  textStyle: {
-    padding: 5,
-  },
-  bView: {
-    paddingBottom: 80,
-  },
-  center: {
-    width: "100%",
-    marginRight: 20,
-  },
-});

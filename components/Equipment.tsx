@@ -1,14 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Tickbox from "./Tickbox";
+import { sharedStyles } from "@/sharedStyles";
 
 const Equipment = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.vMain}>
-      <Text style={styles.tTitle}>Equipment Used in Ambulance</Text>
-      <Text style={styles.t2}>(Check all that apply)</Text>
+    <View style={sharedStyles.vMain}>
+      <Text style={sharedStyles.tTitle}>Equipment Used in Ambulance</Text>
+      <Text style={sharedStyles.t2b}>(Check all that apply)</Text>
 
-      <Text style={styles.t24}>Airway</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Airway</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Fixed suction"
           value={updateForm.equipmentAirway === "fixedSuction"}
@@ -51,8 +52,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Cardiovascular</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Cardiovascular</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="AED (automatic defibrillator)"
           value={updateForm.equipmentCardiovascular === "aed"}
@@ -127,8 +128,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Ear-Nose-Mouth-Throat</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Ear-Nose-Mouth-Throat</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Suction (for foreign body)"
           value={updateForm.equipmentEarMouth === "suction"}
@@ -141,8 +142,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>General Medical</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>General Medical</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Oral glucose"
           value={updateForm.equipmentGeneralMedical === "oralGlucose"}
@@ -155,8 +156,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Musculoskeletal/Bleeding</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Musculoskeletal/Bleeding</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Bandage (1-inch)"
           value={updateForm.equipmentMusculoskeletal === "bandage1inch"}
@@ -239,8 +240,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Psychiatric/Behavioural</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Psychiatric/Behavioural</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Restraints"
           value={updateForm.equipmentPsychiatric === "restraints"}
@@ -253,8 +254,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Respiratory</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Respiratory</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="BVM (bag-valve-mask)"
           value={updateForm.equipmentRespiratory === "bvm"}
@@ -317,8 +318,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Musculoskeletal/Other</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Musculoskeletal/Other</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Sling"
           value={updateForm.equipmentMusculoskeletalOther === "sling"}
@@ -375,8 +376,8 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Other Equipment Used</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Other Equipment Used</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Bed sheet"
           value={updateForm.otherEquipmentUsed === "bedSheet"}
@@ -433,59 +434,3 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default Equipment;
-
-const styles = StyleSheet.create({
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  t24: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-    textTransform: "uppercase",
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  vMain: {
-    paddingBottom: 25,
-  },
-  textArea: {
-    height: 110,
-  },
-  center: {
-    width: "100%",
-    marginRight: 20,
-  },
-});

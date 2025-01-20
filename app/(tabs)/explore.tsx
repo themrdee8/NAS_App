@@ -6,6 +6,7 @@ import { router } from "expo-router";
 import PasswordInput from "@/components/PasswordInput";
 import { signIn } from "@/lib/appwrite";
 import { useState } from "react";
+import { sharedStyles } from "@/sharedStyles";
 
 export default function TabTwoScreen() {
   const [form, setForm] = useState({
@@ -63,8 +64,8 @@ export default function TabTwoScreen() {
         <Button
           handlePress={login}
           title="Login"
-          containerStyles={styles.button}
-          textStyles={styles.textStyle}
+          containerStyles={sharedStyles.button}
+          textStyles={sharedStyles.textStyle}
         />
       </View>
     </SafeAreaView>
@@ -85,16 +86,6 @@ const styles = StyleSheet.create({
   v1: {
     alignItems: "center",
     paddingTop: 20,
-  },
-  button: {
-    padding: 0,
-    marginTop: 40,
-    borderRadius: 8,
-    width: 399,
-    marginLeft: 14,
-  },
-  textStyle: {
-    padding: 5,
   },
   logo: {
     width: 135,

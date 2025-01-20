@@ -1,13 +1,13 @@
 import { Text } from "react-native";
-import { StyleSheet, View } from "react-native";
-import FormField from "./FormField";
+import { View } from "react-native";
 import Tickbox from "./Tickbox";
+import { sharedStyles } from "@/sharedStyles";
 
 const Triage = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.VMain}>
-      <Text style={styles.tTitle}>Triage</Text>
-      <View style={styles.vCheck}>
+    <View style={sharedStyles.VMain}>
+      <Text style={sharedStyles.tTitle}>Triage</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Red"
           value={updateForm.triage === "red"}
@@ -19,7 +19,10 @@ const Triage = ({ updateForm, updateSetForm }: any) => {
           title="Yellow"
           value={updateForm.triage === "yellow"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, triage: isChecked ? "yellow" : null })
+            updateSetForm({
+              ...updateForm,
+              triage: isChecked ? "yellow" : null,
+            })
           }
         />
         <Tickbox
@@ -38,57 +41,77 @@ const Triage = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Primary Assessment (tick as appropriate)</Text>
-      <Text style={styles.t2}>Breathing</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>
+        Primary Assessment (tick as appropriate)
+      </Text>
+      <Text style={sharedStyles.t2b}>Breathing</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Adequate"
           value={updateForm.breathing === "adequate"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, breathing: isChecked ? "adequate" : null })
+            updateSetForm({
+              ...updateForm,
+              breathing: isChecked ? "adequate" : null,
+            })
           }
         />
         <Tickbox
           title="Inadequate"
           value={updateForm.breathing === "inadequate"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, breathing: isChecked ? "inadequate" : null })
+            updateSetForm({
+              ...updateForm,
+              breathing: isChecked ? "inadequate" : null,
+            })
           }
         />
       </View>
 
-      <Text style={styles.t2}>Circulation</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Circulation</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Pulse Present"
           value={updateForm.circulation === "pulsePresent"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, circulation: isChecked ? "pulsePresent" : null })
+            updateSetForm({
+              ...updateForm,
+              circulation: isChecked ? "pulsePresent" : null,
+            })
           }
         />
         <Tickbox
           title="Pulse Absent"
           value={updateForm.circulation === "pulseAbsent"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, circulation: isChecked ? "pulseAbsent" : null })
+            updateSetForm({
+              ...updateForm,
+              circulation: isChecked ? "pulseAbsent" : null,
+            })
           }
         />
       </View>
 
-      <Text style={styles.t2}> Consciousness</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}> Consciousness</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Conscious"
           value={updateForm.consciousness === "conscious"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, consciousness: isChecked ? "conscious" : null })
+            updateSetForm({
+              ...updateForm,
+              consciousness: isChecked ? "conscious" : null,
+            })
           }
         />
         <Tickbox
           title="Unconscious"
           value={updateForm.consciousness === "unconscious"}
           handleChange={(isChecked: boolean) =>
-            updateSetForm({ ...updateForm, consciousness: isChecked ? "unconscious" : null })
+            updateSetForm({
+              ...updateForm,
+              consciousness: isChecked ? "unconscious" : null,
+            })
           }
         />
       </View>
@@ -97,44 +120,3 @@ const Triage = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default Triage;
-
-const styles = StyleSheet.create({
-  VMain: {
-    paddingVertical: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-});

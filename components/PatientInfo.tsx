@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
+import { sharedStyles } from "@/sharedStyles";
 
 const PatientInfo = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.VMain}>
-      <Text style={styles.tTitle}>Patient Information</Text>
-      <View style={styles.v2}>
+    <View style={sharedStyles.VMain}>
+      <Text style={sharedStyles.tTitle}>Patient Information</Text>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Patient Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.patientName}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, patientName: e })
@@ -17,7 +18,7 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Age"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.age}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, age: e })
@@ -25,8 +26,8 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Gender</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Gender</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Male"
           value={updateForm.gender === "male"}
@@ -46,10 +47,10 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Address"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.address}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, address: e })
@@ -57,7 +58,7 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Telephone"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.telephone}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, telephone: e })
@@ -65,7 +66,7 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="ID No./Passport No."
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.idPassportNumber}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, idPassportNumber: e })
@@ -73,11 +74,11 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Contact Person</Text>
-      <View style={styles.v2}>
+      <Text style={sharedStyles.t2b}>Contact Person</Text>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.contactPersonName}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, contactPersonName: e })
@@ -85,7 +86,7 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Telephone"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.contactPersonTelephone}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, contactPersonTelephone: e })
@@ -93,8 +94,8 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Relationship</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Relationship</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Father/Mother"
           value={updateForm.relationship === "fatherMother"}
@@ -127,8 +128,8 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Patient Refused Treatment</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Patient Refused Treatment</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Yes"
           value={updateForm.patientRefusedTreatment === "yes"}
@@ -155,44 +156,3 @@ const PatientInfo = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default PatientInfo;
-
-const styles = StyleSheet.create({
-  VMain: {
-    paddingVertical: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-});

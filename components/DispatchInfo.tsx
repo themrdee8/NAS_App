@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 import DateTimeInput from "./DateTimeField";
+import { sharedStyles } from "@/sharedStyles";
 
 const Dispatch = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.vMain}>
-      <Text style={styles.tTitle}>Dispatch Information</Text>
-      <View style={styles.v2}>
+    <View style={sharedStyles.vMain}>
+      <Text style={sharedStyles.tTitle}>Dispatch Information</Text>
+      <View style={sharedStyles.v2}>
         <DateTimeInput
           title="Dispatch Date"
           mode="date"
@@ -16,12 +17,12 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, dispatchDate: e })
           }
           placeholder="Select a date"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
       </View>
 
-      <Text style={styles.t2}>Service Unit Contact</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2}>Service Unit Contact</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Hospital/Clinic"
           value={updateForm.serviceUnitContact === "hospitalClinic"}
@@ -74,8 +75,8 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Ambulance Type</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2}>Ambulance Type</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="BLS (Basic Life Support)"
           value={updateForm.ambulanceType === "basicLifeSupport"}
@@ -108,8 +109,8 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Call Type</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2}>Call Type</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Emergency"
           value={updateForm.callType === "emergency"}
@@ -142,8 +143,8 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Reason for Transfer</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2}>Reason for Transfer</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Obstetrics"
           value={updateForm.reasonForTransfer === "obstetrics"}
@@ -186,10 +187,10 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="KM Reading"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.kmReading}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, kmReading: e })
@@ -201,11 +202,11 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
           value={updateForm.time}
           handleChange={(e: any) => updateSetForm({ ...updateForm, time: e })}
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <FormField
           title="Call Number"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.callNumber}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, callNumber: e })
@@ -213,7 +214,7 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Caller's Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.callerName}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, callerName: e })
@@ -221,7 +222,7 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Dispatcher"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.dispatcher}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, dispatcher: e })
@@ -235,7 +236,7 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, timeAmbulanceAssigned: e })
           }
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <DateTimeInput
           title="Time Ambulance Arrived Scene"
@@ -245,7 +246,7 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, timeAmbulanceArrivedScene: e })
           }
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <DateTimeInput
           title="Time Ambulance Left Scene"
@@ -255,7 +256,7 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, timeAmbulanceLeftScene: e })
           }
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <DateTimeInput
           title="Time Arrived Facility"
@@ -265,12 +266,12 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, timeArrivedFacility: e })
           }
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
       </View>
 
-      <Text style={styles.t2}>Arrived At Scene (tick one)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2}>Arrived At Scene (tick one)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Ambulance Arrival"
           value={updateForm.arrivedAtScene === "ambulanceArrival"}
@@ -323,11 +324,11 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Comments"
-          otherStyles={styles.others}
-          textAreaStyle={styles.textArea}
+          otherStyles={sharedStyles.others}
+          textAreaStyle={sharedStyles.textArea}
           value={updateForm.comments}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, comments: e })
@@ -339,47 +340,3 @@ const Dispatch = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default Dispatch;
-
-const styles = StyleSheet.create({
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  vMain: {
-    paddingBottom: 25,
-  },
-  textArea: {
-    height: 110,
-  },
-});

@@ -1,24 +1,25 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
 import DateTimeInput from "./DateTimeField";
+import { sharedStyles } from "@/sharedStyles";
 
 const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.VMain}>
-      <Text style={styles.tTitle}>Physical Exams and Vital Signs</Text>
-      <Text style={styles.t2}>Vital Signs (first record)</Text>
-      <View style={styles.v2}>
+    <View style={sharedStyles.VMain}>
+      <Text style={sharedStyles.tTitle}>Physical Exams and Vital Signs</Text>
+      <Text style={sharedStyles.t2b}>Vital Signs (first record)</Text>
+      <View style={sharedStyles.v2}>
         <FormField
           title="BP"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.bp}
           handleChangeText={(e: any) => updateSetForm({ ...updateForm, bp: e })}
         />
         <FormField
           title="Pulse Rate"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.pulseRate}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, pulseRate: e })
@@ -26,7 +27,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Resp. Rate"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.respRate}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, respRate: e })
@@ -34,7 +35,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="SpO2"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.spO2}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, spO2: e })
@@ -42,7 +43,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Temp. (°C)"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.temp}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, temp: e })
@@ -56,12 +57,12 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({ ...updateForm, vitalSignsTime: e })
           }
           placeholder="Select a time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <FormField
           title="Additional Interventions"
-          otherStyles={styles.others}
-          textAreaStyle={styles.textArea}
+          otherStyles={sharedStyles.others}
+          textAreaStyle={sharedStyles.textArea}
           value={updateForm.additionalInterventions}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, additionalInterventions: e })
@@ -69,13 +70,15 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.VMain}>
-        <Text style={styles.tTitle}>Secondary Assessment / Interventions</Text>
-        <View style={styles.v2}>
+      <View style={sharedStyles.VMain}>
+        <Text style={sharedStyles.tTitle}>
+          Secondary Assessment / Interventions
+        </Text>
+        <View style={sharedStyles.v2}>
           <FormField
             title="Field Diagnosis / Observations (details of chief complaint)"
-            otherStyles={styles.others}
-            textAreaStyle={styles.textArea}
+            otherStyles={sharedStyles.others}
+            textAreaStyle={sharedStyles.textArea}
             value={updateForm.fieldDiagnosisObservations}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, fieldDiagnosisObservations: e })
@@ -84,10 +87,10 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
         </View>
       </View>
 
-      <View style={styles.VMain}>
-        <Text style={styles.tTitle}>Patient Handoff</Text>
-        <Text style={styles.t2}>Vital Signs (first record)</Text>
-        <View style={styles.vCheck}>
+      <View style={sharedStyles.VMain}>
+        <Text style={sharedStyles.tTitle}>Patient Handoff</Text>
+        <Text style={sharedStyles.t2b}>Vital Signs (first record)</Text>
+        <View style={sharedStyles.vCheck}>
           <Tickbox
             title="Improved"
             value={updateForm.patientCondition === "improved"}
@@ -130,10 +133,10 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
           />
         </View>
 
-        <View style={styles.v2}>
+        <View style={sharedStyles.v2}>
           <FormField
             title="Receiving Facility Name"
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
             value={updateForm.receivingFacility}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, receivingFacility: e })
@@ -141,7 +144,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
           />
           <FormField
             title="Receiving Department"
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
             value={updateForm.receivingDepartment}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, receivingDepartment: e })
@@ -149,7 +152,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
           />
           <FormField
             title="Receiving Doctor or Nurse (print name)"
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
             value={updateForm.receivingDoctorOrNurse}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, receivingDoctorOrNurse: e })
@@ -157,7 +160,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
           />
           <FormField
             title="Signature"
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
             value={updateForm.signature}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, signature: e })
@@ -171,7 +174,7 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
               updateSetForm({ ...updateForm, dateAndTime: e })
             }
             placeholder="Select a date and time"
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
           />
         </View>
       </View>
@@ -180,47 +183,3 @@ const PhysicalAndHandoff = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default PhysicalAndHandoff;
-
-const styles = StyleSheet.create({
-  VMain: {
-    paddingVertical: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  textArea: {
-    height: 110,
-  },
-});

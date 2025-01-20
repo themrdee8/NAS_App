@@ -6,11 +6,12 @@ import Patient from "@/components/Patient";
 import { createPreBillingForm, signOut } from "@/lib/appwrite";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import { PreBillingCode } from "@/constants/formFields";
 import DateTimeInput from "@/components/DateTimeField";
 import SexTickbox from "@/components/SexTickbox";
 import InsuranceTickbox from "@/components/InsuranceTickbox";
+import { sharedStyles } from "@/sharedStyles";
 
 const preBilling = () => {
   const [form, setForm] = useState(PreBillingCode);
@@ -42,18 +43,18 @@ const preBilling = () => {
   };
 
   return (
-    <ScrollView style={styles.Container}>
+    <ScrollView style={sharedStyles.Container}>
       <View>
-        <Text style={styles.t1}>Pre Billing and Coding</Text>
+        <Text style={sharedStyles.t1}>Pre Billing and Coding</Text>
       </View>
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <DateTimeInput
           title="Dispatch Date"
           mode="date"
           value={form.dispatchDate}
           handleChange={(e: any) => setForm({ ...form, dispatchDate: e })}
           placeholder="Select a date and time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <DateTimeInput
           title="Time Left Base"
@@ -61,11 +62,11 @@ const preBilling = () => {
           value={form.timeLeftBase}
           handleChange={(e: any) => setForm({ ...form, timeLeftBase: e })}
           placeholder="Select a date and time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
         <FormField
           title="Abulance Station No."
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.ambulanceStationNumber}
           handleChangeText={(e: any) =>
             setForm({ ...form, ambulanceStationNumber: e })
@@ -73,7 +74,7 @@ const preBilling = () => {
         />
         <FormField
           title="Patient First Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.patientFirstName}
           handleChangeText={(e: any) =>
             setForm({ ...form, patientFirstName: e })
@@ -81,7 +82,7 @@ const preBilling = () => {
         />
         <FormField
           title="Patient Last Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.patientLastName}
           handleChangeText={(e: any) =>
             setForm({ ...form, patientLastName: e })
@@ -91,10 +92,10 @@ const preBilling = () => {
 
       <SexTickbox updateForm={form} updateSetForm={setForm} />
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Age/Date of Birth"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.ageDateOfBirth}
           handleChangeText={(e: any) => setForm({ ...form, ageDateOfBirth: e })}
         />
@@ -102,10 +103,10 @@ const preBilling = () => {
 
       <InsuranceTickbox updateForm={form} updateSetForm={setForm} />
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Insurance Company"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.insuranceCompany}
           handleChangeText={(e: any) =>
             setForm({ ...form, insuranceCompany: e })
@@ -113,10 +114,10 @@ const preBilling = () => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="EMT Completing this Form"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.emtCompletingThisForm}
           handleChangeText={(e: any) =>
             setForm({ ...form, emtCompletingThisForm: e })
@@ -124,13 +125,13 @@ const preBilling = () => {
         />
         <FormField
           title="EMT Name"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.emtName}
           handleChangeText={(e: any) => setForm({ ...form, emtName: e })}
         />
         <FormField
           title="Signature"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.emtSignature}
           handleChangeText={(e: any) => setForm({ ...form, emtSignature: e })}
         />
@@ -140,7 +141,7 @@ const preBilling = () => {
           value={form.emtDateTime}
           handleChange={(e: any) => setForm({ ...form, emtDateTime: e })}
           placeholder="Select a date and time"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
         />
       </View>
 
@@ -150,11 +151,11 @@ const preBilling = () => {
 
       <Equipment updateForm={form} updateSetForm={setForm} />
 
-      <View style={styles.bView}>
+      <View style={sharedStyles.bView}>
         <Button
           title="Submit Form"
-          containerStyles={styles.button}
-          textStyles={styles.textStyle}
+          containerStyles={sharedStyles.button}
+          textStyles={sharedStyles.textStyle}
           handlePress={submit}
         />
       </View>
@@ -163,63 +164,3 @@ const preBilling = () => {
 };
 
 export default preBilling;
-
-const styles = StyleSheet.create({
-  Container: {
-    backgroundColor: "#10251E",
-    height: "100%",
-    paddingTop: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  button: {
-    padding: 0,
-    marginTop: 40,
-    borderRadius: 8,
-    width: 399,
-    marginLeft: 14,
-  },
-  textStyle: {
-    padding: 5,
-  },
-  bView: {
-    paddingBottom: 80,
-  },
-  center: {
-    width: "100%",
-    marginRight: 20,
-  },
-});

@@ -9,8 +9,9 @@ import Triage from "@/components/Triage";
 import { createPreHospitalCare } from "@/lib/appwrite";
 import { router } from "expo-router";
 import { useState } from "react";
-import { Alert, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import { PreHospitalCare } from "@/constants/formFields";
+import { sharedStyles } from "@/sharedStyles";
 
 const preCare = () => {
   const [form, setForm] = useState(PreHospitalCare);
@@ -41,14 +42,14 @@ const preCare = () => {
   };
 
   return (
-    <ScrollView style={styles.Container}>
+    <ScrollView style={sharedStyles.Container}>
       <View>
-        <Text style={styles.t1}>Pre Hospital Care Report</Text>
+        <Text style={sharedStyles.t1}>Pre Hospital Care Report</Text>
       </View>
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Ambulance Station"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.ambulanceStation}
           handleChangeText={(e: any) =>
             setForm({ ...form, ambulanceStation: e })
@@ -56,13 +57,13 @@ const preCare = () => {
         />
         <FormField
           title="Shift Code"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.shiftCode}
           handleChangeText={(e: any) => setForm({ ...form, shiftCode: e })}
         />
         <FormField
           title="Region"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={form.region}
           handleChangeText={(e: any) => setForm({ ...form, region: e })}
         />
@@ -80,11 +81,11 @@ const preCare = () => {
 
       <PersonnelForm updateForm={form} updateSetForm={setForm} />
 
-      <View style={styles.bView}>
+      <View style={sharedStyles.bView}>
         <Button
           title="Next"
-          containerStyles={styles.button}
-          textStyles={styles.textStyle}
+          containerStyles={sharedStyles.button}
+          textStyles={sharedStyles.textStyle}
           handlePress={billing}
         />
       </View>
@@ -93,50 +94,3 @@ const preCare = () => {
 };
 
 export default preCare;
-
-const styles = StyleSheet.create({
-  Container: {
-    backgroundColor: "#10251E",
-    height: "100%",
-    paddingTop: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  button: {
-    padding: 0,
-    marginTop: 40,
-    borderRadius: 8,
-    width: 399,
-    marginLeft: 14,
-  },
-  textStyle: {
-    padding: 5,
-  },
-  bView: {
-    paddingBottom: 80,
-  },
-});

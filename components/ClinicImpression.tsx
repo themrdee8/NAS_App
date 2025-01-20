@@ -1,18 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Tickbox from "./Tickbox";
 import FormField from "./FormField";
+import { sharedStyles } from "@/sharedStyles";
 
 const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.vMain}>
-      <Text style={styles.tTitle}>Clinical Impression</Text>
-      <Text style={styles.t2}>
+    <View style={sharedStyles.vMain}>
+      <Text style={sharedStyles.tTitle}>Clinical Impression</Text>
+      <Text style={sharedStyles.t2b}>
         (Please check up to 3 boxes corresponding to the patient's main
         problems)
       </Text>
 
-      <Text style={styles.t24}>Airway</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Airway</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Airway blocked"
           value={updateForm.airway === "airwayBlocked"}
@@ -45,8 +46,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Cardiovascular</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Cardiovascular</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Arrhythmia"
           value={updateForm.cardiovascular === "arrhythmia"}
@@ -149,8 +150,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Ear-Mouth-Nose-Throat</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Ear-Mouth-Nose-Throat</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Ear pain"
           value={updateForm.earMouthNoseThroat === "earPain"}
@@ -223,8 +224,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Environmental</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Environmental</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Allergic reaction"
           value={updateForm.environmental === "allergicReaction"}
@@ -317,8 +318,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Eyes (Ophthalmologic)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Eyes (Ophthalmologic)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Blindness (sudden)"
           value={updateForm.eyes === "blindnessSudden"}
@@ -358,8 +359,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Gastrointestinal</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Gastrointestinal</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Abdominal pain"
           value={updateForm.gastrointestinal === "abdominalPain"}
@@ -422,8 +423,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>General Medical</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>General Medical</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Dehydration"
           value={updateForm.generalMedical === "dehydration"}
@@ -525,7 +526,7 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           }
         />
       </View>
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title={
             <Tickbox
@@ -537,10 +538,10 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
                   generalMedical: isChecked ? "other" : null,
                 })
               }
-              centerItem={styles.center}
+              centerItem={sharedStyles.center}
             />
           }
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.generalMedicalOther}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, generalMedicalOther: e })
@@ -548,8 +549,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Gynaecological</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Gynaecological</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Pelvic pain/     cramping"
           value={updateForm.gynaecological === "pelvicPainCramping"}
@@ -582,8 +583,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Maternal (Obstetric)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Maternal (Obstetric)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Cardiac arrest"
           value={updateForm.maternalObstetric === "cardiacArrest"}
@@ -678,8 +679,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Musculoskeletal/Injury</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Musculoskeletal/Injury</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Back pain"
           value={updateForm.musculoskeletalInjury === "backPain"}
@@ -702,8 +703,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Neurological</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Neurological</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Altered level of consciousness"
           value={updateForm.neurological === "alteredLevelOfConsciousness"}
@@ -786,8 +787,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Psychiatric</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Psychiatric</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Agitation"
           value={updateForm.psychiatric === "agitation"}
@@ -840,8 +841,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Respitory</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Respitory</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Asthma symptoms"
           value={updateForm.respiratory === "asthmaSymptoms"}
@@ -934,8 +935,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Urologic</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Urologic</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Cannot Urinate"
           value={updateForm.urologic === "cannotUrinate"}
@@ -958,8 +959,8 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t24}>Skin (Dermatological)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}>Skin (Dermatological)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Bruise (contusion)"
           value={updateForm.skin === "bruiseContusion"}
@@ -1106,59 +1107,3 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default ClinicalImpression;
-
-const styles = StyleSheet.create({
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  t24: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-    textTransform: "uppercase",
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  vMain: {
-    paddingBottom: 25,
-  },
-  textArea: {
-    height: 110,
-  },
-  center: {
-    width: "100%",
-    marginRight: 20,
-  },
-});

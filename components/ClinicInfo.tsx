@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import FormField from "./FormField";
 import Tickbox from "./Tickbox";
+import { sharedStyles } from "@/sharedStyles";
 
 const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.VMain}>
-      <Text style={styles.tTitle}>Clinical Information</Text>
-      <View style={styles.v2}>
+    <View style={sharedStyles.VMain}>
+      <Text style={sharedStyles.tTitle}>Clinical Information</Text>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Chief Complaint or Reason for Transport"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.chiefComplaint}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, chiefComplaint: e })
@@ -17,8 +18,8 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Description of Problem"
-          otherStyles={styles.others}
-          textAreaStyle={styles.textArea}
+          otherStyles={sharedStyles.others}
+          textAreaStyle={sharedStyles.textArea}
           value={updateForm.descriptionOfProblem}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, descriptionOfProblem: e })
@@ -26,8 +27,8 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Body Part Involved(selet one)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Body Part Involved(selet one)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Head/Neck"
           value={updateForm.bodyPartInvolved === "headNeck"}
@@ -110,10 +111,10 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title="Recent Medical History"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.recentMedicalHistory}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, recentMedicalHistory: e })
@@ -121,7 +122,7 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
         <FormField
           title="Recent Medications"
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.recentMedications}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, recentMedications: e })
@@ -129,8 +130,8 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Source of Information(select one)</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Source of Information(select one)</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Patient"
           value={updateForm.sourceOfInformation === "patient"}
@@ -193,8 +194,8 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <Text style={styles.t2}>Type of Trauma</Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t2b}>Type of Trauma</Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="RTC(Road Traffic Collision)"
           value={updateForm.typeOfTrauma === "roadTrafficCollision"}
@@ -251,47 +252,3 @@ const ClinicInfo = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default ClinicInfo;
-
-const styles = StyleSheet.create({
-  VMain: {
-    paddingVertical: 25,
-  },
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  textArea: {
-    height: 110,
-  },
-});

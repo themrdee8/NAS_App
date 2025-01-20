@@ -1,16 +1,16 @@
-import { StyleSheet, Text } from "react-native";
-import { View } from "react-native";
+import { Text, View } from "react-native";
 import Tickbox from "./Tickbox";
 import FormField from "./FormField";
+import { sharedStyles } from "@/sharedStyles";
 
 const Patient = ({ updateForm, updateSetForm }: any) => {
   return (
-    <View style={styles.vMain}>
-      <Text style={styles.tTitle}>Patient's Mechanism of Injury</Text>
-      <Text style={styles.t2}>(ONLY Trauma Cases)</Text>
+    <View style={sharedStyles.vMain}>
+      <Text style={sharedStyles.tTitle}>Patient's Mechanism of Injury</Text>
+      <Text style={sharedStyles.t2b}>(ONLY Trauma Cases)</Text>
 
-      <Text style={styles.t24}></Text>
-      <View style={styles.vCheck}>
+      <Text style={sharedStyles.t24}></Text>
+      <View style={sharedStyles.vCheck}>
         <Tickbox
           title="Alcohol        intoxication"
           value={updateForm.patientMechanismOfInjury === "alcoholIntoxication"}
@@ -174,7 +174,7 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
           }
         />
       </View>
-      <View style={styles.v2}>
+      <View style={sharedStyles.v2}>
         <FormField
           title={
             <Tickbox
@@ -186,10 +186,10 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
                   patientMechanismOfInjury: isChecked ? "other" : null,
                 })
               }
-              centerItem={styles.center}
+              centerItem={sharedStyles.center}
             />
           }
-          otherStyles={styles.others}
+          otherStyles={sharedStyles.others}
           value={updateForm.patientMechanismOfInjuryOther}
           handleChangeText={(e: any) =>
             updateSetForm({ ...updateForm, patientMechanismOfInjuryOther: e })
@@ -197,12 +197,12 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
         />
       </View>
 
-      <View style={styles.vMain}>
-        <Text style={styles.tTitle}>
+      <View style={sharedStyles.vMain}>
+        <Text style={sharedStyles.tTitle}>
           For Road Traffic Accidents, Patient{"    "}Was A
         </Text>
-        <Text style={styles.t24}></Text>
-        <View style={styles.vCheck}>
+        <Text style={sharedStyles.t24}></Text>
+        <View style={sharedStyles.vCheck}>
           <Tickbox
             title="Driver of vehicle"
             value={
@@ -264,9 +264,9 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
         </View>
       </View>
 
-      <View style={styles.vMain}>
-        <Text style={styles.tTitle}>Healthy</Text>
-        <View style={styles.vCheck}>
+      <View style={sharedStyles.vMain}>
+        <Text style={sharedStyles.tTitle}>Healthy</Text>
+        <View style={sharedStyles.vCheck}>
           <Tickbox
             title=" No medical issues identified"
             value={updateForm.healthy === "noMedicalIssuesIdentified"}
@@ -278,7 +278,7 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
             }
           />
         </View>
-        <View style={styles.v2}>
+        <View style={sharedStyles.v2}>
           <FormField
             title={
               <Tickbox
@@ -290,10 +290,10 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
                     healthy: isChecked ? "otherProblemNotListed" : null,
                   })
                 }
-                centerItem={styles.center}
+                centerItem={sharedStyles.center}
               />
             }
-            otherStyles={styles.others}
+            otherStyles={sharedStyles.others}
             value={updateForm.otherProblemNotListed}
             handleChangeText={(e: any) =>
               updateSetForm({ ...updateForm, otherProblemNotListed: e })
@@ -306,59 +306,3 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
 };
 
 export default Patient;
-
-const styles = StyleSheet.create({
-  t1: {
-    fontSize: 25,
-    fontWeight: "700",
-    color: "#68C44C",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  others: {
-    borderColor: "#68C44C",
-  },
-  v2: {
-    alignItems: "center",
-    paddingBottom: 30,
-  },
-  t2: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-  },
-  t24: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-    marginTop: 15,
-    textTransform: "uppercase",
-  },
-  vCheck: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    marginBottom: 8,
-    paddingHorizontal: 10,
-    flexWrap: "wrap",
-  },
-  tTitle: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "#68C44C",
-    marginLeft: 18,
-  },
-  vMain: {
-    paddingBottom: 25,
-  },
-  textArea: {
-    height: 110,
-  },
-  center: {
-    width: "100%",
-    marginRight: 20,
-  },
-});
