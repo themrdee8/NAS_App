@@ -50,6 +50,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentAirway === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentAirway: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Cardiovascular</Text>
@@ -126,17 +136,37 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentCardiovascular === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentCardiovascular: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Ear-Nose-Mouth-Throat</Text>
       <View style={sharedStyles.vCheck}>
         <Tickbox
-          title="Suction (for foreign body)"
+          title="Suction (for         foreign body)"
           value={updateForm.equipmentEarMouth === "suction"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({
               ...updateForm,
               equipmentEarMouth: isChecked ? "suction" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentEarMouth === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentEarMouth: isChecked ? "none" : null,
             })
           }
         />
@@ -151,6 +181,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               equipmentGeneralMedical: isChecked ? "oralGlucose" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentGeneralMedical === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentGeneralMedical: isChecked ? "none" : null,
             })
           }
         />
@@ -238,6 +278,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentMusculoskeletal === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentMusculoskeletal: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Psychiatric/Behavioural</Text>
@@ -249,6 +299,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               equipmentPsychiatric: isChecked ? "restraints" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentPsychiatric === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentPsychiatric: isChecked ? "none" : null,
             })
           }
         />
@@ -316,6 +376,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentRespiratory === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentRespiratory: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Musculoskeletal/Other</Text>
@@ -374,6 +444,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.equipmentMusculoskeletalOther === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              equipmentMusculoskeletalOther: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Other Equipment Used</Text>
@@ -425,6 +505,16 @@ const Equipment = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               otherEquipmentUsed: isChecked ? "gloves" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.otherEquipmentUsed === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              otherEquipmentUsed: isChecked ? "none" : null,
             })
           }
         />

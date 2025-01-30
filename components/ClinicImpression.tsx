@@ -44,6 +44,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.airway === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              airway: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Cardiovascular</Text>
@@ -148,6 +158,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.cardiovascular === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              cardiovascular: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Ear-Mouth-Nose-Throat</Text>
@@ -213,12 +233,22 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           }
         />
         <Tickbox
-          title="Object stuck in throat"
+          title="Object stuck in    throat"
           value={updateForm.earMouthNoseThroat === "objectStuckInThroat"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({
               ...updateForm,
               earMouthNoseThroat: isChecked ? "objectStuckInThroat" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.earMouthNoseThroat === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              earMouthNoseThroat: isChecked ? "none" : null,
             })
           }
         />
@@ -307,12 +337,22 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           }
         />
         <Tickbox
-          title="Heat (hyperthermia)"
+          title="Heat      (hyperthermia)"
           value={updateForm.environmental === "heatHyperthermia"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({
               ...updateForm,
               environmental: isChecked ? "heatHyperthermia" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.environmental === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              environmental: isChecked ? "none" : null,
             })
           }
         />
@@ -355,6 +395,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           value={updateForm.eyes === "eyePain"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({ ...updateForm, eyes: isChecked ? "eyePain" : null })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.eyes === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              eyes: isChecked ? "none" : null,
+            })
           }
         />
       </View>
@@ -418,6 +468,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               gastrointestinal: isChecked ? "vomitingBloody" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.gastrointestinal === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              gastrointestinal: isChecked ? "none" : null,
             })
           }
         />
@@ -525,6 +585,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.generalMedical === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              generalMedical: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
       <View style={sharedStyles.v2}>
         <FormField
@@ -578,6 +648,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               gynaecological: isChecked ? "vaginalDischarge" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.gynaecological === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              gynaecological: isChecked ? "none" : null,
             })
           }
         />
@@ -677,6 +757,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.maternalObstetric === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              maternalObstetric: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Musculoskeletal/Injury</Text>
@@ -698,6 +788,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               musculoskeletalInjury: isChecked ? "cantWalk" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.musculoskeletalInjury === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              musculoskeletalInjury: isChecked ? "none" : null,
             })
           }
         />
@@ -785,6 +885,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.neurological === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              neurological: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
 
       <Text style={sharedStyles.t24}>Psychiatric</Text>
@@ -830,12 +940,22 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           }
         />
         <Tickbox
-          title="Psychiatric emergency"
+          title="Psychiatric  emergency"
           value={updateForm.psychiatric === "psychiatricEmergency"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({
               ...updateForm,
               psychiatric: isChecked ? "psychiatricEmergency" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.psychiatric === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              psychiatric: isChecked ? "none" : null,
             })
           }
         />
@@ -924,12 +1044,22 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
           }
         />
         <Tickbox
-          title="Shortness of breath"
+          title="Shortness of        breath"
           value={updateForm.respiratory === "shortnessOfBreath"}
           handleChange={(isChecked: boolean) =>
             updateSetForm({
               ...updateForm,
               respiratory: isChecked ? "shortnessOfBreath" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.respiratory === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              respiratory: isChecked ? "none" : null,
             })
           }
         />
@@ -954,6 +1084,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               urologic: isChecked ? "foleyCatheterProblem" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.urologic === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              urologic: isChecked ? "none" : null,
             })
           }
         />
@@ -1098,6 +1238,16 @@ const ClinicalImpression = ({ updateForm, updateSetForm }: any) => {
             updateSetForm({
               ...updateForm,
               skin: isChecked ? "skinInfection" : null,
+            })
+          }
+        />
+        <Tickbox
+          title="None"
+          value={updateForm.skin === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              skin: isChecked ? "none" : null,
             })
           }
         />

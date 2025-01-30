@@ -121,7 +121,7 @@ export const PreBillingCode = {
   otherProblemNotListed: "",
   sex: ["male", "female"],
   insurance: ["nhis", "other"],
-  airway: ["choking", "airwayBlocked", "airwayProblem"],
+  airway: ["choking", "airwayBlocked", "airwayProblem", "none"],
   cardiovascular: [
     "arrhythmia",
     "fainting",
@@ -133,6 +133,7 @@ export const PreBillingCode = {
     "lowBloodPressure",
     "lowPulse",
     "lowBloodSugar",
+    "none",
   ],
   earMouthNoseThroat: [
     "earPain",
@@ -142,6 +143,7 @@ export const PreBillingCode = {
     "objectStuckInThroat",
     "soreThroat",
     "toothPain",
+    "none",
   ],
   environmental: [
     "poisoning",
@@ -153,8 +155,9 @@ export const PreBillingCode = {
     "coldHypothermia",
     "heatHyperthermia",
     "smokeInhalation",
+    "none",
   ],
-  eyes: ["blindnessSudden", "blurryVision", "eyeDischarge", "eyePain"],
+  eyes: ["blindnessSudden", "blurryVision", "eyeDischarge", "eyePain", "none"],
   gastrointestinal: [
     "constipation",
     "diarrhoea",
@@ -162,6 +165,7 @@ export const PreBillingCode = {
     "abdominalPain",
     "bleedingFromRectumStool",
     "vomitingBloody",
+    "none",
   ],
   generalMedical: [
     "dehydration",
@@ -175,8 +179,14 @@ export const PreBillingCode = {
     "seizureReaction",
     "otherAllergicReaction",
     "sepsisInfectionComplication",
+    "none",
   ],
-  gynaecological: ["pelvicPainCramping", "vaginalBleeding", "vaginalDischarge"],
+  gynaecological: [
+    "pelvicPainCramping",
+    "vaginalBleeding",
+    "vaginalDischarge",
+    "none",
+  ],
   maternalObstetric: [
     "cardiacArrest",
     "labourUnder32Weeks",
@@ -187,8 +197,9 @@ export const PreBillingCode = {
     "preLabourRuptureOfMembrane",
     "vaginalDischarge",
     "vaginalBleeding",
+    "none",
   ],
-  musculoskeletalInjury: ["backPain", "cantWalk"],
+  musculoskeletalInjury: ["backPain", "cantWalk", "none"],
   neurological: [
     "headache",
     "alteredLevelOfConsciousness",
@@ -198,6 +209,7 @@ export const PreBillingCode = {
     "seizureWithAIrwayCompromise",
     "weaknessRightSide",
     "weaknessLeftSide",
+    "none",
   ],
   psychiatric: [
     "agitation",
@@ -205,6 +217,7 @@ export const PreBillingCode = {
     "depression",
     "behaviouralDisorder",
     "psychiatricEmergency",
+    "none",
   ],
   respiratory: [
     "asthmaSymptoms",
@@ -216,8 +229,9 @@ export const PreBillingCode = {
     "respiratoryDistress",
     "respiratoryArrest",
     "shortnessOfBreath",
+    "none",
   ],
-  urologic: ["cannotUrinate", "foleyCatheterProblem"],
+  urologic: ["cannotUrinate", "foleyCatheterProblem", "none"],
   skin: [
     "dislocation",
     "bruiseContusion",
@@ -233,6 +247,7 @@ export const PreBillingCode = {
     "swellingHematoma",
     "painfulLesionsOnSkin",
     "skinInfection",
+    "none",
   ],
   patientMechanismOfInjury: [
     "electrocution",
@@ -252,15 +267,17 @@ export const PreBillingCode = {
     "fallFrom8Plusft",
     "hazardousMaterials",
     "motorAccident",
+    "none",
   ],
   roadTrafficAccidentPatientWasA: [
     "driverOfVehicle",
     "passengerInVehicle",
     "padestrianHitByMotorbike",
     "padestrianHitByVehicle",
+    "none",
   ],
-  healthy: ["noMedicalIssuesIdentified", "otherProblemNotListed"],
-  equipmentAirway: ["fixedSuction", "npa", "opa", "portableSuction"],
+  healthy: ["noMedicalIssuesIdentified", "otherProblemNotListed", "none"],
+  equipmentAirway: ["fixedSuction", "npa", "opa", "portableSuction", "none"],
   equipmentCardiovascular: [
     "tourniquet",
     "aed",
@@ -269,9 +286,10 @@ export const PreBillingCode = {
     "normalSalineBag1",
     "normalSalineBag2",
     "normalSalineBag3",
+    "none",
   ],
-  equipmentEarMouth: ["suction"],
-  equipmentGeneralMedical: ["oralGlucose"],
+  equipmentEarMouth: ["suction", "none"],
+  equipmentGeneralMedical: ["oralGlucose", "none"],
   equipmentMusculoskeletal: [
     "gauze",
     "bandage1inch",
@@ -281,8 +299,9 @@ export const PreBillingCode = {
     "cervicalCollar",
     "cottonRoll",
     "plasterTape",
+    "none",
   ],
-  equipmentPsychiatric: ["restraints"],
+  equipmentPsychiatric: ["restraints", "none"],
   equipmentRespiratory: [
     "oxygen",
     "bvm",
@@ -290,6 +309,7 @@ export const PreBillingCode = {
     "faceMaskPediatric",
     "nasalCannula",
     "nonRebreatherMask",
+    "none",
   ],
   equipmentMusculoskeletalOther: [
     "sling",
@@ -297,6 +317,7 @@ export const PreBillingCode = {
     "splintLong",
     "splintShort",
     "triangularBandage",
+    "none",
   ],
   otherEquipmentUsed: [
     "blanket",
@@ -304,5 +325,6 @@ export const PreBillingCode = {
     "bedSheet",
     "faceMask",
     "faceShield",
+    "none",
   ],
 };

@@ -173,6 +173,16 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
             })
           }
         />
+        <Tickbox
+          title="None"
+          value={updateForm.patientMechanismOfInjury === "none"}
+          handleChange={(isChecked: boolean) =>
+            updateSetForm({
+              ...updateForm,
+              patientMechanismOfInjury: isChecked ? "none" : null,
+            })
+          }
+        />
       </View>
       <View style={sharedStyles.v2}>
         <FormField
@@ -261,6 +271,16 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
               })
             }
           />
+          <Tickbox
+            title="None"
+            value={updateForm.roadTrafficAccidentPatientWasA === "none"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                roadTrafficAccidentPatientWasA: isChecked ? "none" : null,
+              })
+            }
+          />
         </View>
       </View>
 
@@ -268,12 +288,22 @@ const Patient = ({ updateForm, updateSetForm }: any) => {
         <Text style={sharedStyles.tTitle}>Healthy</Text>
         <View style={sharedStyles.vCheck}>
           <Tickbox
-            title=" No medical issues identified"
+            title="No medical issues identified"
             value={updateForm.healthy === "noMedicalIssuesIdentified"}
             handleChange={(isChecked: boolean) =>
               updateSetForm({
                 ...updateForm,
                 healthy: isChecked ? "noMedicalIssuesIdentified" : null,
+              })
+            }
+          />
+          <Tickbox
+            title="None"
+            value={updateForm.healthy === "none"}
+            handleChange={(isChecked: boolean) =>
+              updateSetForm({
+                ...updateForm,
+                healthy: isChecked ? "none" : null,
               })
             }
           />
